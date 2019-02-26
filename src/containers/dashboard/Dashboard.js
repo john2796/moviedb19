@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../../components/navbar/Navbar";
-import { callbackify } from "util";
+
 class Dashboard extends Component {
   render() {
     return (
