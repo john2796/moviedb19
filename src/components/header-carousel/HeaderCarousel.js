@@ -5,6 +5,7 @@ class HeaderCarousel extends Component {
     super(props);
     this.state = {};
   }
+  //comment
   render() {
     return (
       <div>
