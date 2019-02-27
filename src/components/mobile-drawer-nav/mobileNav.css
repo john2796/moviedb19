@@ -1,0 +1,13 @@
+.mobile_menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile_menu {
+    display: block;
+    border: 1px solid red;
+  }
+  .btn-bottom {
+    color: black;
+  }
+}
