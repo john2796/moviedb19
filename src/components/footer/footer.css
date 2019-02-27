@@ -1,0 +1,85 @@
+.footer-container {
+  height: 70vh;
+  width: 100%;
+  background: #131517;
+  padding: 7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.footer-h1 {
+  color: white;
+  font-size: 1.7rem;
+  letter-spacing: 0.3rem;
+
+  text-transform: uppercase;
+}
+
+.tmdb-footer-logo {
+  max-height: 100px;
+  max-width: 200px;
+}
+
+.footer-menu-a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.footer-left-section {
+}
+
+.footer-right-section {
+  justify-items: right;
+  grid-template-columns: 1fr;
+  display: grid;
+}
+
+.footer-menu {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info {
+  display: grid;
+  margin-top: 30px;
+}
+
+.footer-info-item {
+  color: white;
+  display: grid;
+  margin-top: 40px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer-info-item-title {
+  color: rgb(204, 202, 202);
+  font-weight: bold;
+}
+
+.footer-copyright {
+  color: rgb(204, 202, 202);
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+.footer-social-icons {
+}
+
+.footer-social-icon {
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin: 10px;
+  background: rgb(204, 202, 202);
+  cursor: pointer;
+  color: black;
+}
+
+.footer-social-icon:hover {
+  background: white;
+}
