@@ -69,10 +69,15 @@ class Footer extends Component {
           </div>
         </div>
         <div className="footer-right-section">
-          <img src={tmdb} alt="tmdb logo" className="tmdb-footer-logo" />
+          <img
+            src={tmdb}
+            alt="tmdb logo"
+            className="tmdb-footer-logo wow fadeInUp"
+            data-wow-delay=".5s"
+          />
           <div
             className="footer-social-icons wow fadeInUp"
-            data-wow-delay=".6s"
+            data-wow-delay=".5s"
           >
             <a href="#" className="footer-social-icon">
               <FontAwesomeIcon icon="code" />
@@ -80,7 +85,7 @@ class Footer extends Component {
             <a
               href="https://www.facebook.com/themoviedb"
               className="footer-social-icon wow fadeInUp"
-              data-wow-delay=".65s"
+              data-wow-delay=".7s"
               style={{ padding: "10px 13px" }}
             >
               <FontAwesomeIcon icon={["fab", "facebook"]} />
@@ -88,7 +93,7 @@ class Footer extends Component {
             <a
               href="https://twitter.com/themoviedb"
               className="footer-social-icon wow fadeInUp"
-              data-wow-delay=".7s"
+              data-wow-delay=".9s"
             >
               <FontAwesomeIcon icon={["fab", "twitter"]} />
             </a>
