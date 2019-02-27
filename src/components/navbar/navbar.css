@@ -1,0 +1,21 @@
+.navbar {
+  background: #1b262a !important;
+}
+
+.toolbar {
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+}
+.right-icons {
+  display: flex;
+}
+.right-icons h6 {
+  margin-left: 10px;
+}
+
+@media (max-width: 855px) {
+  #navbar-desktop {
+    display: none;
+  }
+}
