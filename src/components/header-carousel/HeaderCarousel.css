@@ -1,5 +1,5 @@
 .header-carousel-container {
-  height: 91vh;
+  max-height: 91vh;
   width: 100%;
 }
 
@@ -11,7 +11,6 @@
   text-decoration: none;
   font-size: 1.3rem;
   color: #fff;
-  margin-bottom: 18vh;
 }
 
 .carousel-movie-title {
@@ -19,4 +18,9 @@
   margin: 5px 0;
   font-weight: bold;
   font-size: 1.7rem;
+}
+
+.carousel-slide {
+  cursor: pointer;
+  max-height: 91vh;
 }
