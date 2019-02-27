@@ -12,7 +12,7 @@
 @media (max-width: 900px) {
   #mobile_hamburger {
     position: fixed;
-    top: 6px;
+    top: 8px;
     z-index: 99;
     left: 88vw;
     display: block;
