@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
 import "./mobileNav.css";
 import NavListRight from "../navbar/NavListRight";
 import NavLogo from "../navbar/NavLogo";
 import NavbarSearch from "../navbar/NavbarSearch";
+import WOW from "wowjs";
 const styles = {
   list: {
     width: 250
@@ -21,10 +21,17 @@ class MobileNav extends React.Component {
     bottom: false
   };
 
+  // componentDidMount() {
+  //   const wow = new WOW.WOW();
+  //   wow.init();
+  // }
+
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open
     });
+    const wow = new WOW.WOW();
+    wow.init();
   };
   render() {
     return (
@@ -75,7 +82,10 @@ class MobileNav extends React.Component {
           >
             {/* {bottomList} */}
 
-            <div className="inner-mobile-topnav">
+            <div
+              className="inner-mobile-topnav wow fadeInLeft"
+              data-wow-delay=".3s"
+            >
               <NavLogo />
               <NavbarSearch />
             </div>
