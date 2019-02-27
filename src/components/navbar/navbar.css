@@ -34,4 +34,9 @@
   #navbar-desktop {
     display: none;
   }
+  .fas {
+    color: #fff;
+    font-size: 2rem;
+    padding: 15px 0;
+  }
 }

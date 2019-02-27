@@ -8,9 +8,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import IconButton from "@material-ui/core/IconButton";
 
 import "./mobileNav.css";
+import NavListRight from "../navbar/NavListRight";
 const styles = {
   list: {
     width: 250
@@ -30,36 +30,20 @@ class MobileNav extends React.Component {
       [side]: open
     });
   };
-
   render() {
-    const { classes } = this.props;
-    const bottomList = (
-      <div className={classes.fullList}>
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </div>
-    );
-
     return (
       <div>
-        <div
-          color="inherit"
-          aria-label="Open drawer"
-          onClick={this.toggleDrawer("bottom", true)}
-          id="mobile_hamburger"
-        >
+        <div color="inherit" id="mobile_hamburger">
           {this.state.bottom ? (
-            <i className="fas fa-times" />
+            <i
+              className="fas fa-times"
+              onClick={this.toggleDrawer("bottom", false)}
+            />
           ) : (
-            <i className="fas fa-bars" />
+            <i
+              className="fas fa-bars"
+              onClick={this.toggleDrawer("bottom", true)}
+            />
           )}
         </div>
         <Drawer
@@ -72,8 +56,10 @@ class MobileNav extends React.Component {
             role="button"
             onClick={this.toggleDrawer("bottom", false)}
             onKeyDown={this.toggleDrawer("bottom", false)}
+            className="drawer-mobile"
           >
-            {bottomList}
+            {/* {bottomList} */}
+            <NavListRight />
           </div>
         </Drawer>
       </div>

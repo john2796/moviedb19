@@ -9,11 +9,17 @@
     z-index: 99;
     left: 88vw;
     display: block;
-    z-index: 99;
+    z-index: 999999;
   }
   .fa-bars,
   .fa-times {
     color: white;
     font-size: 2rem;
+  }
+  .drawer-mobile {
+    background: #1b262a;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }
