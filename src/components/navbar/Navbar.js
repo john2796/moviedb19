@@ -23,10 +23,10 @@ function Navbar(props) {
       <div className={classes.root} id="navbar-desktop">
         <AppBar position="fixed" className="navbar">
           <Toolbar className="toolbar">
-            <div className="nav-item">
+            <div className="nav-item mobile-item">
               <NavLogo />
             </div>
-            <div className="nav-item search">
+            <div className="nav-item search mobile-item">
               <NavbarSearch />
             </div>
             <div className="nav-item right-icons ">

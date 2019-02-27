@@ -61,7 +61,7 @@ const NavbarSearch = ({ classes }) => {
   return (
     <React.Fragment>
       <div className={classes.grow} />
-      <div className={classes.search}>
+      <div className={classes.search} id="searching">
         <div className={classes.searchIcon}>
           <SearchIcon />
         </div>
