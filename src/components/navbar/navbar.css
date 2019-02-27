@@ -6,6 +6,7 @@
   display: flex;
   border: 1px solid red;
   align-items: center;
+  padding: 10px 0;
   justify-content: space-between;
 }
 .right-icons {
@@ -22,7 +23,11 @@
   color: #fff;
   font-size: 1.8rem;
   margin-left: 30px;
-  padding: 20px 0;
+  cursor: pointer;
+}
+.navbar-logo {
+  max-width: 100%;
+  width: 50px;
 }
 
 @media (max-width: 900px) {

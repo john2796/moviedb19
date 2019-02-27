@@ -1,13 +1,19 @@
-.mobile_menu {
+#mobile_hamburger {
   display: none;
 }
 
 @media (max-width: 900px) {
-  .mobile_menu {
+  #mobile_hamburger {
+    position: absolute;
+    top: 10px;
+    z-index: 99;
+    left: 88vw;
     display: block;
-    border: 1px solid red;
+    z-index: 99;
   }
-  .btn-bottom {
-    color: black;
+  .fa-bars,
+  .fa-times {
+    color: white;
+    font-size: 2rem;
   }
 }
