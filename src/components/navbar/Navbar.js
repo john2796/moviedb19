@@ -62,9 +62,9 @@ const styles = theme => ({
     width: "100%",
     borderRadius: "10%",
     [theme.breakpoints.up("sm")]: {
-      width: 300,
+      width: 200,
       "&:focus": {
-        width: 320
+        width: 250
       }
     }
   }
@@ -74,7 +74,7 @@ function Navbar(props) {
   const { classes } = props;
   return (
     <div className={classes.root} id="navbar-desktop">
-      <AppBar position="static" className="navbar">
+      <AppBar position="fixed" className="navbar">
         <Toolbar className="toolbar">
           <div className="nav-item">
             <Typography
@@ -86,7 +86,7 @@ function Navbar(props) {
               ICON
             </Typography>
           </div>
-          <div className="nav-item">
+          <div className="nav-item search">
             <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -109,7 +109,7 @@ function Navbar(props) {
               color="inherit"
               noWrap
             >
-              Icon 1
+              <i className="fas fa-home" />
             </Typography>{" "}
             <Typography
               className={classes.title}
@@ -117,7 +117,7 @@ function Navbar(props) {
               color="inherit"
               noWrap
             >
-              Icon 2
+              <i className="fas fa-user-circle" />
             </Typography>{" "}
             <Typography
               className={classes.title}
@@ -125,7 +125,7 @@ function Navbar(props) {
               color="inherit"
               noWrap
             >
-              Icon 3
+              <i className="fas fa-compass" />
             </Typography>
           </div>
           {/*============ Mobile navbar start ==============*/}

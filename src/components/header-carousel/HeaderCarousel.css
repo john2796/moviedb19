@@ -1,6 +1,12 @@
 .header-carousel-container {
+  margin-top: 6.4vh;
   height: 91vh;
   width: 100%;
+}
+@media (max-width: 900px) {
+  .header-carousel-container {
+    margin-top: -6.4vh;
+  }
 }
 
 .carousel-movie-info {
@@ -19,4 +25,9 @@
   margin: 5px 0;
   font-weight: bold;
   font-size: 1.7rem;
+}
+
+/* testing navbar fixed you can remove this later  */
+.header-carousel-container {
+  margin-bottom: 100vh;
 }
