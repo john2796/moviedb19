@@ -1,6 +1,6 @@
 .header-carousel-container {
+  max-height: 91vh;
   margin-top: 6.4vh;
-  height: 91vh;
   width: 100%;
 }
 @media (max-width: 900px) {
@@ -17,7 +17,6 @@
   text-decoration: none;
   font-size: 1.3rem;
   color: #fff;
-  margin-bottom: 18vh;
 }
 
 .carousel-movie-title {
@@ -27,7 +26,12 @@
   font-size: 1.7rem;
 }
 
+
+.carousel-slide {
+  cursor: pointer;
+  max-height: 91vh;
 /* testing navbar fixed you can remove this later  */
 .header-carousel-container {
   margin-bottom: 100vh;
+
 }
