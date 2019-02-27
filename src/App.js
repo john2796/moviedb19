@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Register from "./containers/register/Register";
 import Login from "./containers/login/Login";
 import Dashboard from "./containers/dashboard/Dashboard";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Dashboard />
         <Register />
         <Login />
+        <Footer />
       </div>
     );
   }
