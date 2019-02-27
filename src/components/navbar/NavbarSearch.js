@@ -4,9 +4,6 @@ import SearchIcon from "@material-ui/icons/Search";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
-  root: {
-    width: "100%"
-  },
   grow: {
     flexGrow: 1
   },
