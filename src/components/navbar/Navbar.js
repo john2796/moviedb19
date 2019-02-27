@@ -28,11 +28,9 @@ const styles = theme => ({
   },
   search: {
     position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
-    },
+    borderRadius: "20px",
+    backgroundColor: "#ffff",
+    height: "39px",
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
@@ -47,11 +45,18 @@ const styles = theme => ({
     pointerEvents: "none",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    background: "#EB4E7A",
+    height: " 40px",
+    width: " 80px",
+    marginLeft: "-2px",
+    borderRadius: " 20px"
   },
   inputRoot: {
-    color: "inherit",
-    width: "100%"
+    color: "black",
+    width: "100%",
+
+    lineHeight: 1.5
   },
   inputInput: {
     paddingTop: theme.spacing.unit,
