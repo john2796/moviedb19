@@ -2,16 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+
 import "./mobileNav.css";
 const styles = {
   list: {
@@ -24,10 +22,7 @@ const styles = {
 
 class MobileNav extends React.Component {
   state = {
-    top: false,
-    left: false,
-    bottom: false,
-    right: false
+    bottom: false
   };
 
   toggleDrawer = (side, open) => () => {
@@ -54,22 +49,19 @@ class MobileNav extends React.Component {
     );
 
     return (
-      <div className="mobile_menu">
-        <h1>testing</h1>
-        <IconButton
-          className={classes.menuButton}
+      <div>
+        <div
           color="inherit"
           aria-label="Open drawer"
-          className=""
-        >
-          <MenuIcon />
-        </IconButton>
-        <Button
-          className="btn-bottom"
           onClick={this.toggleDrawer("bottom", true)}
+          id="mobile_hamburger"
         >
-          Open Bottom
-        </Button>
+          {this.state.bottom ? (
+            <i className="fas fa-times" />
+          ) : (
+            <i className="fas fa-bars" />
+          )}
+        </div>
         <Drawer
           anchor="bottom"
           open={this.state.bottom}

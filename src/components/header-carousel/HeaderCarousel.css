@@ -26,12 +26,11 @@
   font-size: 1.7rem;
 }
 
-
 .carousel-slide {
   cursor: pointer;
   max-height: 91vh;
+}
 /* testing navbar fixed you can remove this later  */
 .header-carousel-container {
   margin-bottom: 100vh;
-
 }

@@ -4,7 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
-import { fade } from "@material-ui/core/styles/colorManipulator";
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import "./navbar.css";
@@ -16,10 +15,7 @@ const styles = theme => ({
   grow: {
     flexGrow: 1
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20
-  },
+
   title: {
     display: "none",
     [theme.breakpoints.up("sm")]: {
@@ -50,7 +46,8 @@ const styles = theme => ({
     height: " 40px",
     width: " 80px",
     marginLeft: "-2px",
-    borderRadius: " 20px"
+    borderRadius: " 20px",
+    right: -20
   },
   inputRoot: {
     color: "black",
@@ -78,67 +75,73 @@ const styles = theme => ({
 function Navbar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root} id="navbar-desktop">
-      <AppBar position="fixed" className="navbar">
-        <Toolbar className="toolbar">
-          <div className="nav-item">
-            <Typography
-              className={classes.title}
-              variant="h6"
-              color="inherit"
-              noWrap
-            >
-              ICON
-            </Typography>
-          </div>
-          <div className="nav-item search">
-            <div className={classes.grow} />
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput
-                }}
-              />
+    <>
+      <div className={classes.root} id="navbar-desktop">
+        <AppBar position="fixed" className="navbar">
+          <Toolbar className="toolbar">
+            <div className="nav-item">
+              <Typography
+                className={classes.title}
+                variant="h6"
+                color="inherit"
+                noWrap
+              >
+                <img
+                  className="navbar-logo"
+                  src="https://www.shareicon.net/download/2016/11/03/849428_movie_512x512.png"
+                  alt="logo"
+                />
+              </Typography>
             </div>
-          </div>
+            <div className="nav-item search">
+              <div className={classes.grow} />
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput
+                  }}
+                />
+              </div>
+            </div>
 
-          <div className="nav-item right-icons">
-            <Typography
-              className={classes.title}
-              variant="h6"
-              color="inherit"
-              noWrap
-            >
-              <i className="fas fa-home" />
-            </Typography>{" "}
-            <Typography
-              className={classes.title}
-              variant="h6"
-              color="inherit"
-              noWrap
-            >
-              <i className="fas fa-user-circle" />
-            </Typography>{" "}
-            <Typography
-              className={classes.title}
-              variant="h6"
-              color="inherit"
-              noWrap
-            >
-              <i className="fas fa-compass" />
-            </Typography>
-          </div>
-          {/*============ Mobile navbar start ==============*/}
-          <MobileNav />
-          {/*============ Mobile navbar ends ==============*/}
-        </Toolbar>
-      </AppBar>
-    </div>
+            <div className="nav-item right-icons">
+              <Typography
+                className={classes.title}
+                variant="h6"
+                color="inherit"
+                noWrap
+              >
+                <i className="fas fa-home" />
+              </Typography>{" "}
+              <Typography
+                className={classes.title}
+                variant="h6"
+                color="inherit"
+                noWrap
+              >
+                <i className="fas fa-user-circle" />
+              </Typography>{" "}
+              <Typography
+                className={classes.title}
+                variant="h6"
+                color="inherit"
+                noWrap
+              >
+                <i className="fas fa-compass" />
+              </Typography>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+      {/*============ Mobile navbar start ==============*/}
+      <MobileNav />
+      {/*============ Mobile navbar ends ==============*/}
+    </>
   );
 }
 
