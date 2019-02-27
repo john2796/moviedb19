@@ -4,7 +4,6 @@
 
 .toolbar {
   display: flex;
-  border: 1px solid red;
   align-items: center;
   padding: 10px 0;
   justify-content: space-between;
@@ -33,5 +32,10 @@
 @media (max-width: 900px) {
   #navbar-desktop {
     display: none;
+  }
+  .fas {
+    color: #fff;
+    font-size: 2rem;
+    padding: 15px 0;
   }
 }
