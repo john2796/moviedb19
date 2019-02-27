@@ -1,4 +1,22 @@
 .header-carousel-container {
-  height: 92vh;
+  height: 91vh;
   width: 100%;
+}
+
+.carousel-movie-info {
+  bottom: 2rem;
+  left: 2rem;
+  position: absolute;
+  text-align: left;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 18vh;
+}
+
+.carousel-movie-title {
+  color: #fff;
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 1.7rem;
 }
