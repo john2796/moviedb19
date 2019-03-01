@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700");
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  color: #ffff;
+}
+
+.login-left {
+  width: 45%;
+}
+.login-logo {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+}
+.dark-login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #16122a;
+  padding: 50px 0;
+}
+.dark-login-section h1 {
+  font: bold 3rem "Alegreya Sans", sans-serif;
+}
+.dark-login-section p {
+  font-size: 0.8rem;
+}
+
+.main-btn {
+  font: 1.2rem "Alegreya Sans", sans-serif;
+  font-weight: 700;
+  background-color: #eb4e7a;
+  border: 3px solid #eb4e7a;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  display: block;
+  margin: 5rem auto;
+  outline: none;
+  padding: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  width: 220px;
+  text-align: center;
+}
+.main-btn:hover {
+  border: 3px solid #eb4e7a;
+  background: #fff;
+  color: #16122a;
+}
+.user-login .info {
+  color: #16122a;
+  text-align: center;
+}
+
+/* ======================== right section ========================= */
+
+.login-right {
+  width: 55%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) no-repeat
+      center center,
+    #eb4e7a
+      url("https://image.tmdb.org/t/p/w1280/7d6EY00g1c39SGZOoCJ5Py9nNth.jpg")
+      no-repeat center center;
+  background-size: cover;
+  border-left: 10px solid #eb4e7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-right h2 {
+  color: #fff;
+  font: bold 52px "Alegreya Sans", sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px #eb4e7a, 2px 2px #eb4e7a, 3px 3px #eb4e7a;
+  text-transform: uppercase;
+  -webkit-transition: all 0.12s ease-out;
+  -o-transition: all 0.12s ease-out;
+  transition: all 0.12s ease-out;
+  width: 80%;
+}
+
+.login-right h2:hover {
+  text-shadow: 6px 6px #eb4e7a, 2px 2px #eb4e7a, 3px 3px #eb4e7a;
+  transform: translate(-7px, -7px);
+}
