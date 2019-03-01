@@ -1,10 +1,18 @@
 .upcoming-cards {
   max-height: 300px;
   opacity: 0.4;
+  transition: all 200ms ease-in;
 }
 
 .upcoming-cards:hover {
   opacity: 1;
+  -webkit-transform: scale(1.1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.1);
+  transition: all 200ms ease-in;
+  transform: scale(1.1);
 }
 
 .upcoming-cards .images {
@@ -14,4 +22,25 @@
   color: #ffffff;
   text-align: center;
   padding-top: 2rem;
+}
+.slick-arrow {
+  color: #ffffff;
+  display: inline-block;
+}
+
+.right {
+  position: absolute;
+  top: 69px;
+  right: -60px;
+}
+.left {
+  position: absolute;
+  bottom: 150px;
+  left: -60px;
+}
+.left .fa-chevron-left,
+.right .fa-chevron-right {
+  padding: 10px;
+  margin: 0 auto;
+  color: #0364e5;
 }
