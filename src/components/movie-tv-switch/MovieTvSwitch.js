@@ -7,6 +7,12 @@ class MovieTvSwitch extends Component {
     super(props);
     this.state = {};
   }
+
+  componentDidMount() {
+    const wow = new WOW.WOW();
+    wow.init();
+  }
+
   render() {
     return (
       <div className="movie-tv-switch-container">
