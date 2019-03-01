@@ -17,9 +17,10 @@
 
 .upcoming-cards .images {
   width: 85%;
+  position: relative;
   max-height: 300px;
 }
-.upcoming-cards p {
+.carousel-title {
   color: #ffffff;
   text-align: center;
   padding-top: 2rem;
@@ -44,4 +45,25 @@
   padding: 10px;
   margin: 0 auto;
   color: #0364e5;
+}
+
+.carousel-rating {
+  position: absolute;
+  margin-top: 1rem;
+  background: black;
+  color: white;
+  top: 0;
+  line-height: 1.2;
+  font-size: 0.8rem;
+  padding-right: 3px;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-star {
+  font-size: 0.6rem;
+  margin: 0;
+  padding: 3px;
 }

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import TopicCarousel from "./TopicHeader";
 import "./HomeMain.css";
 import WOW from "wowjs";
 import TopicHeader from "./TopicHeader";
 import UpcomingCarousel from "../upcoming-carousel/UpcomingCarousel";
+import PopularCarousel from "../popular-carousel/PopularCarousel";
+import { getGenres } from "../../store/actions/movieActions";
+import { connect } from "react-redux";
 
 class HomeMain extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class HomeMain extends Component {
   componentDidMount() {
     const wow = new WOW.WOW();
     wow.init();
+    this.props.getGenres();
   }
 
   render() {
@@ -26,6 +29,8 @@ class HomeMain extends Component {
 
         <hr className="home-main-divider wow fadeIn" />
         <TopicHeader name={"Popular"} />
+        <PopularCarousel />
+
         <hr className="home-main-divider wow fadeIn" />
         <TopicHeader name={"Now Playing"} />
         <hr className="home-main-divider wow fadeIn" />
@@ -36,4 +41,7 @@ class HomeMain extends Component {
   }
 }
 
-export default HomeMain;
+export default connect(
+  null,
+  { getGenres }
+)(HomeMain);

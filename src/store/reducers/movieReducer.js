@@ -1,9 +1,17 @@
-import { LOADING, GET_UPCOMING_SUCCESS, ERRORS } from "../actions/movieActions";
+import {
+  LOADING,
+  GET_UPCOMING_SUCCESS,
+  ERRORS,
+  GET_POPULAR_SUCCESS,
+  GET_GENRES_SUCCESS
+} from "../actions/movieActions";
 
 const initialState = {
   upcoming: [],
+  popular: [],
+  genres: [],
   loading: false,
-  errors: null
+  errors: {}
 };
 
 export default function movieReducer(state = initialState, action) {
@@ -23,9 +31,24 @@ export default function movieReducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        errors: null,
+        errors: {},
         upcoming: action.payload
       };
+    case GET_POPULAR_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        errors: {},
+        popular: action.payload
+      };
+    case GET_GENRES_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        errors: {},
+        genres: action.payload
+      };
+
     default:
       return state;
   }
