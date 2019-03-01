@@ -17,6 +17,7 @@
 
 .upcoming-cards .images {
   width: 85%;
+  max-height: 300px;
 }
 .upcoming-cards p {
   color: #ffffff;
