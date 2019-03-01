@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import HeaderCarousel from "../../components/header-carousel/HeaderCarousel";
+import Footer from "../../components/footer/footer";
 
 class Dashboard extends Component {
   render() {
@@ -8,6 +9,7 @@ class Dashboard extends Component {
       <div>
         <Navbar />
         <HeaderCarousel />
+        <Footer />
       </div>
     );
   }
