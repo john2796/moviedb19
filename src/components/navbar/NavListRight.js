@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 const styles = theme => ({
   title: {
     display: "none",
@@ -20,7 +21,9 @@ const NavListRight = ({ classes }) => {
         color="inherit"
         noWrap
       >
-        <i className="fas fa-home" />
+        <Link to="/">
+          <i className="fas fa-home" />
+        </Link>
       </Typography>{" "}
       <Typography
         className={`${classes.title} wow fadeInRight`}
@@ -29,7 +32,9 @@ const NavListRight = ({ classes }) => {
         color="inherit"
         noWrap
       >
-        <i className="fas fa-user-circle" />
+        <Link to="/login">
+          <i className="fas fa-user-circle" />
+        </Link>
       </Typography>{" "}
       <Typography
         className={`${classes.title} wow fadeInRight`}
