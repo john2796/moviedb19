@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./HomeMain.css";
 import WOW from "wowjs";
+import { connect } from "react-redux";
+import { getUpcoming } from "../../store/actions/movieActions";
 
 class TopicCarousel extends Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class TopicCarousel extends Component {
   componentDidMount() {
     const wow = new WOW.WOW();
     wow.init();
+    this.props.getUpcoming();
   }
   render() {
     return (
@@ -21,4 +24,11 @@ class TopicCarousel extends Component {
   }
 }
 
-export default TopicCarousel;
+const mapStateToProps = state => ({
+  stateName: state.stateName
+});
+
+export default connect(
+  mapStateToProps,
+  { getUpcoming }
+)(TopicCarousel);
