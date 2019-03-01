@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./HomeMain.css";
-import WOW from "wowjs";
 import { connect } from "react-redux";
 import { getUpcoming } from "../../store/actions/movieActions";
 
@@ -11,21 +9,17 @@ class TopicCarousel extends Component {
   }
 
   componentDidMount() {
-    const wow = new WOW.WOW();
-    wow.init();
     this.props.getUpcoming();
   }
   render() {
     return (
-      <div className="home-main-topic-container wow fadeIn">
-        <h2 className="home-main-h2">{this.props.name}</h2>
-      </div>
+      <div className="home-main-topic-container wow fadeIn">upcoming cards</div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  stateName: state.stateName
+  upcoming: state.movieReducer.upcoming
 });
 
 export default connect(

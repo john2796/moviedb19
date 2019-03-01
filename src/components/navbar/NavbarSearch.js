@@ -28,8 +28,6 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "center",
     background: "#EB4E7A",
-    height: " 40px",
-    width: " 80px",
     marginLeft: "-2px",
     borderRadius: " 20px",
     right: -20

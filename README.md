@@ -1,7 +1,5 @@
 # Movie Search Db19 🔥🔥🔥🔥🔥🔥🔥
 
-uhhh hiiiii
-
 ![](assets/01.png)
 
 ### Functionalities that need to be done.
