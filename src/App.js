@@ -3,6 +3,8 @@ import Register from "./containers/register/Register";
 import Login from "./containers/login/Login";
 import Dashboard from "./containers/dashboard/Dashboard";
 import Footer from "./components/footer/footer";
+import HomeMain from "./components/home-main/HomeMain";
+import MovieTvSwitch from "./components/movie-tv-switch/MovieTvSwitch";
 
 class App extends Component {
   render() {
@@ -10,6 +12,8 @@ class App extends Component {
       <div className="App">
         {/* Routes dynamic */}
         <Dashboard />
+        <MovieTvSwitch />
+        <HomeMain />
         <Register />
         <Login />
         <Footer />
