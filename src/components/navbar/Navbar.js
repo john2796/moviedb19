@@ -1,10 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-
+import WOW from "wowjs";
 import { withStyles } from "@material-ui/core/styles";
-
 import "./navbar.css";
 import MobileNav from "../mobile-drawer-nav/MobileNav";
 import NavListRight from "./NavListRight";
@@ -16,28 +15,40 @@ const styles = theme => ({
   }
 });
 
-function Navbar(props) {
-  const { classes } = props;
-  return (
-    <>
-      <div className={classes.root} id="navbar-desktop">
-        <AppBar position="fixed" className="navbar">
-          <Toolbar className="toolbar">
-            <div className="nav-item mobile-item">
-              <NavLogo />
-            </div>
-            <div className="nav-item search mobile-item">
-              <NavbarSearch />
-            </div>
-            <div className="nav-item right-icons ">
-              <NavListRight />
-            </div>
-          </Toolbar>
-        </AppBar>
-      </div>
-      <MobileNav />
-    </>
-  );
+class Navbar extends Component {
+  componentDidMount() {
+    const wow = new WOW.WOW();
+    wow.init();
+  }
+  render() {
+    const { classes } = this.props;
+    return (
+      <>
+        <div className={classes.root} id="navbar-desktop">
+          <AppBar position="fixed" className="navbar">
+            <Toolbar className="toolbar">
+              <div
+                className="nav-item mobile-item wow fadeInLeft"
+                data-wow-delay=".6s"
+              >
+                <NavLogo />
+              </div>
+              <div
+                className="nav-item search mobile-item wow bounceIn"
+                data-wow-delay=".8s"
+              >
+                <NavbarSearch />
+              </div>
+              <div className="nav-item right-icons ">
+                <NavListRight />
+              </div>
+            </Toolbar>
+          </AppBar>
+        </div>
+        <MobileNav />
+      </>
+    );
+  }
 }
 
 Navbar.propTypes = {
