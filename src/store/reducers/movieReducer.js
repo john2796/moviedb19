@@ -2,12 +2,14 @@ import {
   LOADING,
   GET_UPCOMING_SUCCESS,
   ERRORS,
-  GET_POPULAR_SUCCESS
+  GET_POPULAR_SUCCESS,
+  GET_GENRES_SUCCESS
 } from "../actions/movieActions";
 
 const initialState = {
   upcoming: [],
   popular: [],
+  genres: [],
   loading: false,
   errors: {}
 };
@@ -38,6 +40,13 @@ export default function movieReducer(state = initialState, action) {
         loading: false,
         errors: {},
         popular: action.payload
+      };
+    case GET_GENRES_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        errors: {},
+        genres: action.payload
       };
 
     default:

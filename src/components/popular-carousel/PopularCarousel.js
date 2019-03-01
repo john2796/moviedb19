@@ -8,7 +8,6 @@ class TopicCarousel extends Component {
   }
   render() {
     const { popular } = this.props;
-    console.log(popular);
 
     return (
       <div className="upcoming-wrapper">
