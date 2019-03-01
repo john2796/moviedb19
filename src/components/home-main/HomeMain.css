@@ -6,14 +6,16 @@
 
 .home-main-topic-container {
   font-family: "Lato", sans-serif;
-  height: 360px;
+  padding-bottom: 20px;
+  border: 1px solid red;
   width: 100%;
   padding-top: 20px;
 }
 
 .home-main-h2 {
-  color: white;
-  font-size: 1.5rem;
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
   letter-spacing: 0.4rem;
   font-weight: bold;
 }
