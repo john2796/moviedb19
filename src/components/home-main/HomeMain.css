@@ -1,8 +1,30 @@
 .home-main-container {
   background-color: #161130;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.home-main-topic-container {
+  font-family: "Lato", sans-serif;
+  height: 360px;
+  width: 100%;
+  padding-top: 20px;
 }
 
 .home-main-h2 {
   color: white;
-  font-size: 3rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.4rem;
+  font-weight: bold;
+}
+
+.home-main-divider {
+  background-image: radial-gradient(
+    circle,
+    rgba(210, 208, 208, 0.190914) 0%,
+    rgba(210, 208, 208, 0) 90%
+  );
+  border: none;
+  height: 2px;
+  margin: 10px 0px;
 }

@@ -5,6 +5,7 @@ import Dashboard from "./containers/dashboard/Dashboard";
 import Footer from "./components/footer/footer";
 import HomeMain from "./components/home-main/HomeMain";
 import MovieTvSwitch from "./components/movie-tv-switch/MovieTvSwitch";
+import "./App.css";
 
 class App extends Component {
   render() {
