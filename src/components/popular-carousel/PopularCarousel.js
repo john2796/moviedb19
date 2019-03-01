@@ -1,27 +1,28 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import InfiniteCarousel from "../infinite-carousel/InfiniteCarousel";
-import { getUpcoming } from "../../store/actions/movieActions";
+import { getPopular } from "../../store/actions/movieActions";
 class TopicCarousel extends Component {
   componentDidMount() {
-    this.props.getUpcoming();
+    this.props.getPopular();
   }
   render() {
-    const { upcoming } = this.props;
+    const { popular } = this.props;
+    console.log(popular);
 
     return (
       <div className="upcoming-wrapper">
-        <InfiniteCarousel filterTopics={upcoming} />
+        <InfiniteCarousel filterTopics={popular} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  upcoming: state.movieReducer.upcoming
+  popular: state.movieReducer.popular
 });
 
 export default connect(
   mapStateToProps,
-  { getUpcoming }
+  { getPopular }
 )(TopicCarousel);

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import TopicCarousel from "./TopicHeader";
 import "./HomeMain.css";
 import WOW from "wowjs";
 import TopicHeader from "./TopicHeader";
 import UpcomingCarousel from "../upcoming-carousel/UpcomingCarousel";
+import PopularCarousel from "../popular-carousel/PopularCarousel";
 
 class HomeMain extends Component {
   constructor(props) {
@@ -26,6 +26,8 @@ class HomeMain extends Component {
 
         <hr className="home-main-divider wow fadeIn" />
         <TopicHeader name={"Popular"} />
+        <PopularCarousel />
+
         <hr className="home-main-divider wow fadeIn" />
         <TopicHeader name={"Now Playing"} />
         <hr className="home-main-divider wow fadeIn" />

@@ -2,9 +2,13 @@ import axios from "axios";
 export const GET_UPCOMING_SUCCESS = "GET_UPCOMING_SUCCESS";
 export const LOADING = "LOADING";
 export const ERRORS = "ERRORS";
+export const GET_POPULAR_SUCCESS = "GET_POPULAR_SUCCESS";
 
 const UPCOMING =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
+
+const POPULAR =
+  "https://api.themoviedb.org/3/movie/popular?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
 
 export const getUpcoming = page => dispatch => {
   dispatch(setLoading());
@@ -14,6 +18,26 @@ export const getUpcoming = page => dispatch => {
     .then(res =>
       dispatch({
         type: GET_UPCOMING_SUCCESS,
+        payload: res.data.results
+      })
+    )
+    .catch(err => {
+      console.log(err);
+      dispatch({
+        type: ERRORS,
+        payload: err
+      });
+    });
+};
+
+export const getPopular = page => dispatch => {
+  dispatch(setLoading());
+
+  axios
+    .get(`${POPULAR}`)
+    .then(res =>
+      dispatch({
+        type: GET_POPULAR_SUCCESS,
         payload: res.data.results
       })
     )

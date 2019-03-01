@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import "./infiniteCarousel.css";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -26,6 +27,7 @@ class InfiniteCarousel extends Component {
       infinite: true,
       centerPadding: "60px",
       slidesToShow: 6,
+      slidesToScroll: 1,
       speed: 400,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
@@ -57,13 +59,19 @@ class InfiniteCarousel extends Component {
     return (
       <Slider {...settings}>
         {this.props.filterTopics.map(item => (
-          <div className="upcoming-cards">
+          <div className="upcoming-cards" key={item.id}>
             <img
               className="images"
               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
               alt={item.original_title}
             />
-            <p>{item.title}</p>
+            <p className="carousel-title">{item.title}</p>
+            <p className="carousel-rating">
+              <span>
+                <i className="fas fa-star" />
+              </span>
+              {item.vote_average}
+            </p>
           </div>
         ))}
       </Slider>
