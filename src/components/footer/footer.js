@@ -9,7 +9,6 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 library.add(fab, faCode, faFacebook, faTwitter);
-
 class Footer extends Component {
   componentDidMount() {
     const wow = new WOW.WOW();
