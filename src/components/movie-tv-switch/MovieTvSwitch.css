@@ -6,11 +6,6 @@
   padding-bottom: 4rem;
 }
 
-.movie-tv-switch-h2 {
-  font-size: 3rem;
-  color: white;
-}
-
 .movie-tv-buttons-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
