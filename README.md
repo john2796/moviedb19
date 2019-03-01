@@ -1,3 +1,7 @@
+# Movie Search Db19
+
+![](assets/01.png)
+
 ### Functionalities that need to be done.
 
 1. [x]jb - Login Page
@@ -31,6 +35,11 @@
    - [] Profile picture
 
 ---
+
+## Stretch
+
+- [] Add pagination on infinite carousels
+- [] Add Socials Login Option \*etc (fb, twitter , github, google)
 
 ## Authors
 
