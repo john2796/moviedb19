@@ -21,7 +21,9 @@ class Footer extends Component {
       <div className="footer-container">
         <div className="footer-left-section">
           <div className="footer-menu">
+
             <h2 className="footer-h2 wow fadeInLeft" data-wow-delay=".5s">
+
               Site Name
             </h2>
             <nav className="footer-nav">

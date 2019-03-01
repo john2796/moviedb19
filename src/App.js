@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Register from "./containers/register/Register";
 import Login from "./containers/login/Login";
 import Dashboard from "./containers/dashboard/Dashboard";
+import "./App.css";
 import { Route } from "react-router-dom";
+
 
 class App extends Component {
   render() {
