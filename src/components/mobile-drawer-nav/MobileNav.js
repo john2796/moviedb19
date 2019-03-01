@@ -23,11 +23,6 @@ class MobileNav extends Component {
     isOpen: false
   };
 
-  // componentDidMount() {
-  //   const wow = new WOW.WOW();
-  //   wow.init();
-  // }
-
   // toggleDrawer = (side, open) => () => {
   //   this.setState({
   //     [side]: open
