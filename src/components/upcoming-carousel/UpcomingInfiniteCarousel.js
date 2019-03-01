@@ -10,7 +10,7 @@ class UpcomingInfiniteCarousel extends Component {
       infinite: true,
       centerPadding: "60px",
       slidesToShow: 5,
-      speed: 300
+      speed: 400
     };
 
     return (
@@ -18,9 +18,11 @@ class UpcomingInfiniteCarousel extends Component {
         {upcoming.map(item => (
           <div className="upcoming-cards">
             <img
+              className="images"
               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
               alt={item.original_title}
             />
+            <p>{item.title}</p>
           </div>
         ))}
       </Slider>
