@@ -18,9 +18,8 @@ function PrevArrow(props) {
     </div>
   );
 }
-class UpcomingInfiniteCarousel extends Component {
+class InfiniteCarousel extends Component {
   render() {
-    const { upcoming } = this.props;
     const settings = {
       className: "center",
       centerMode: true,
@@ -57,7 +56,7 @@ class UpcomingInfiniteCarousel extends Component {
 
     return (
       <Slider {...settings}>
-        {upcoming.map(item => (
+        {this.props.filterTopics.map(item => (
           <div className="upcoming-cards">
             <img
               className="images"
@@ -71,4 +70,4 @@ class UpcomingInfiniteCarousel extends Component {
     );
   }
 }
-export default UpcomingInfiniteCarousel;
+export default InfiniteCarousel;
