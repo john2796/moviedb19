@@ -1,8 +1,7 @@
 .footer-container {
-  height: 40vh;
   width: 100%;
   background: #131517;
-  padding: 7rem;
+  padding: 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-family: "Ubuntu", sans-serif;
