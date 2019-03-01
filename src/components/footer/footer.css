@@ -8,24 +8,9 @@
   font-family: "Ubuntu", sans-serif;
 }
 
-.footer-h1 {
-  color: white;
-  font-size: 1.7rem;
-  letter-spacing: 0.3rem;
-
-  text-transform: uppercase;
-}
-
 .tmdb-footer-logo {
   max-height: 100px;
   max-width: 200px;
-}
-
-.footer-menu-a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
 }
 
 .footer-left-section {
@@ -38,10 +23,25 @@
 }
 
 .footer-menu {
-  display: flex;
-  max-width: 100%;
-  justify-content: space-between;
   align-items: center;
+  display: grid;
+  grid-template-columns: 200px 200px;
+}
+
+.footer-h2 {
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.footer-menu-a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 20px;
 }
 
 .footer-info {
@@ -82,4 +82,46 @@
 
 .footer-social-icon:hover {
   background: white;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    padding: 4rem;
+    display: block;
+  }
+  .footer-right-section {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 2rem;
+    display: block;
+    height: 65vh;
+  }
+
+  .footer-menu {
+    font-size: 1rem;
+    display: block;
+  }
+
+  .footer-nav {
+    margin-top: 30px;
+  }
+
+  .footer-h2 {
+    display: block;
+  }
+
+  .footer-info {
+    margin-top: 15px;
+  }
+
+  .footer-social-icon {
+    font-size: 1rem;
+  }
 }
