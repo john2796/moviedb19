@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import TopicCarousel from "./TopicCarousel";
+import TopicCarousel from "./TopicHeader";
 import "./HomeMain.css";
 import WOW from "wowjs";
+import TopicHeader from "./TopicHeader";
+import UpcomingCarousel from "../upcoming-carousel/UpcomingCarousel";
 
 class HomeMain extends Component {
   constructor(props) {
@@ -17,13 +19,17 @@ class HomeMain extends Component {
   render() {
     return (
       <div className="home-main-container">
-        <TopicCarousel name={"Upcoming"} />
+        {/* upcoming title */}
+        <TopicHeader name={"Upcoming"} />
+        {/* upcoming carousel */}
+        <UpcomingCarousel />
+
         <hr className="home-main-divider wow fadeIn" />
-        <TopicCarousel name={"Popular"} />
+        <TopicHeader name={"Popular"} />
         <hr className="home-main-divider wow fadeIn" />
-        <TopicCarousel name={"Now Playing"} />
+        <TopicHeader name={"Now Playing"} />
         <hr className="home-main-divider wow fadeIn" />
-        <TopicCarousel name={"Top-Rated"} />
+        <TopicHeader name={"Top-Rated"} />
         <hr className="home-main-divider wow fadeIn" />
       </div>
     );

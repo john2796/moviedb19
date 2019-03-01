@@ -6,14 +6,18 @@
 
 .home-main-topic-container {
   font-family: "Lato", sans-serif;
-  height: 360px;
+  padding-bottom: 20px;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 100px;
+}
+.home-main-topic-container:first-child {
+  padding-top: 30px;
 }
 
 .home-main-h2 {
-  color: white;
-  font-size: 1.5rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   letter-spacing: 0.4rem;
   font-weight: bold;
 }
@@ -26,5 +30,5 @@
   );
   border: none;
   height: 2px;
-  margin: 10px 0px;
+  margin: 50px 0px;
 }

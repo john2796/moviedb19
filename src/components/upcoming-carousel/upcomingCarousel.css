@@ -1,0 +1,17 @@
+.upcoming-cards {
+  max-height: 300px;
+  opacity: 0.4;
+}
+
+.upcoming-cards:hover {
+  opacity: 1;
+}
+
+.upcoming-cards .images {
+  width: 85%;
+}
+.upcoming-cards p {
+  color: #ffffff;
+  text-align: center;
+  padding-top: 2rem;
+}

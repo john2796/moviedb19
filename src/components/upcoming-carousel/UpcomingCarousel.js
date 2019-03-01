@@ -1,31 +1,25 @@
 import React, { Component } from "react";
-import "./HomeMain.css";
-import WOW from "wowjs";
 import { connect } from "react-redux";
+import UpcomingInfiniteCarousel from "./UpcomingInfiniteCarousel";
 import { getUpcoming } from "../../store/actions/movieActions";
-
+import "./upcomingCarousel.css";
 class TopicCarousel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   componentDidMount() {
-    const wow = new WOW.WOW();
-    wow.init();
     this.props.getUpcoming();
   }
   render() {
+    const { upcoming } = this.props;
+
     return (
-      <div className="home-main-topic-container wow fadeIn">
-        <h2 className="home-main-h2">{this.props.name}</h2>
+      <div className="upcoming-wrapper">
+        <UpcomingInfiniteCarousel upcoming={upcoming} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  stateName: state.stateName
+  upcoming: state.movieReducer.upcoming
 });
 
 export default connect(

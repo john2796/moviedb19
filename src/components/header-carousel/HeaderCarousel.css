@@ -4,6 +4,11 @@
   position: relative;
   top: 5rem;
 }
+@media (max-width: 900px) {
+  .header-carousel-container {
+    top: 0;
+  }
+}
 
 .carousel-movie-info {
   bottom: 2rem;
