@@ -2,9 +2,18 @@
   max-height: 300px;
   opacity: 0.4;
   transition: all 200ms ease-in;
+  text-align: left;
 }
 
+.upcoming-cards .images {
+  width: 85%;
+  position: relative;
+  max-height: 300px;
+}
 .upcoming-cards:hover {
+  opacity: 1;
+}
+.upcoming-cards .images:hover {
   opacity: 1;
   -webkit-transform: scale(1.1);
   -ms-transition: all 200ms ease-in;
@@ -15,15 +24,10 @@
   transform: scale(1.1);
 }
 
-.upcoming-cards .images {
-  width: 85%;
-  position: relative;
-  max-height: 300px;
-}
 .carousel-title {
   color: #ffffff;
-  text-align: center;
   padding-top: 2rem;
+  margin-bottom: 5px;
 }
 .slick-arrow {
   color: #ffffff;
@@ -66,4 +70,9 @@
   font-size: 0.6rem;
   margin: 0;
   padding: 3px;
+}
+.carousel-genres span {
+  color: white;
+  font-size: 0.7rem;
+  text-align: left;
 }
