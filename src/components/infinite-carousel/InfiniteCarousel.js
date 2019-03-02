@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "./infiniteCarousel.css";
 import { connect } from "react-redux";
+import { CLIENT_RENEG_WINDOW } from "tls";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -28,8 +29,8 @@ class InfiniteCarousel extends Component {
       infinite: true,
       centerPadding: "60px",
       slidesToShow: 6,
-      slidesToScroll: 1,
       speed: 400,
+      lazyLoad: true,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
       initialSlide: 0,
@@ -37,7 +38,7 @@ class InfiniteCarousel extends Component {
         {
           breakpoint: 900,
           settings: {
-            slidesToShow: 4,
+            slidesToShow: 6,
             infinite: true,
             dots: true
           }
@@ -45,7 +46,7 @@ class InfiniteCarousel extends Component {
         {
           breakpoint: 700,
           settings: {
-            slidesToShow: 3
+            slidesToShow: 4
           }
         },
         {
@@ -60,6 +61,8 @@ class InfiniteCarousel extends Component {
     return (
       <Slider {...settings}>
         {this.props.filterTopics.map(item => {
+          let genredynamic = item.genre_ids.slice(0, 2) || 27;
+          console.log("genres", genredynamic);
           return (
             <div className="upcoming-cards" key={item.id}>
               <img
@@ -76,10 +79,10 @@ class InfiniteCarousel extends Component {
               </p>
               <p className="carousel-genres">
                 {this.props.genres
-                  .filter(x => item.genre_ids.includes(x))
+                  .filter(x => genredynamic.includes(x.id))
                   .map(genre => {
-                    console.log(genre);
-                    return <p>{genre.name}</p>;
+                    console.log("name", genre);
+                    return <span>{genre.name}</span>;
                   })}
               </p>
             </div>
