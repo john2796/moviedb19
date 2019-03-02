@@ -4,6 +4,8 @@ export const LOADING = "LOADING";
 export const ERRORS = "ERRORS";
 export const GET_POPULAR_SUCCESS = "GET_POPULAR_SUCCESS";
 export const GET_GENRES_SUCCESS = "GET_GENRES_SUCCESS";
+export const GET_NOW_PLAYING_SUCCESS = "GET_NOW_PLAYING_SUCCESS";
+export const GET_TOP_RATED_SUCCESS = "GET_TOP_RATED_SUCCESS";
 
 const UPCOMING =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
@@ -13,6 +15,12 @@ const POPULAR =
 
 const GENRES =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US";
+
+const NOW_PLAYING =
+  "https://api.themoviedb.org/3/movie/now_playing?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
+
+const TOP_RATED =
+  "https://api.themoviedb.org/3/movie/top_rated?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
 
 export const getUpcoming = page => dispatch => {
   dispatch(setLoading());
@@ -42,6 +50,46 @@ export const getPopular = page => dispatch => {
     .then(res =>
       dispatch({
         type: GET_POPULAR_SUCCESS,
+        payload: res.data.results
+      })
+    )
+    .catch(err => {
+      console.log(err);
+      dispatch({
+        type: ERRORS,
+        payload: err
+      });
+    });
+};
+
+export const getNowPlaying = page => dispatch => {
+  dispatch(setLoading());
+
+  axios
+    .get(`${NOW_PLAYING}`)
+    .then(res =>
+      dispatch({
+        type: GET_NOW_PLAYING_SUCCESS,
+        payload: res.data.results
+      })
+    )
+    .catch(err => {
+      console.log(err);
+      dispatch({
+        type: ERRORS,
+        payload: err
+      });
+    });
+};
+
+export const getTopRated = page => dispatch => {
+  dispatch(setLoading());
+
+  axios
+    .get(`${TOP_RATED}`)
+    .then(res =>
+      dispatch({
+        type: GET_TOP_RATED_SUCCESS,
         payload: res.data.results
       })
     )
