@@ -4,6 +4,8 @@ import WOW from "wowjs";
 import TopicHeader from "./TopicHeader";
 import UpcomingCarousel from "../upcoming-carousel/UpcomingCarousel";
 import PopularCarousel from "../popular-carousel/PopularCarousel";
+import NowPlayingCarousel from "../now-playing-carousel/NowPlayingCarousel";
+import TopRatedCarousel from "../top-rated-carousel/TopRatedCarousel";
 import { getGenres } from "../../store/actions/movieActions";
 import { connect } from "react-redux";
 
@@ -33,8 +35,11 @@ class HomeMain extends Component {
 
         <hr className="home-main-divider wow fadeIn" />
         <TopicHeader name={"Now Playing"} />
+        <NowPlayingCarousel />
+
         <hr className="home-main-divider wow fadeIn" />
         <TopicHeader name={"Top-Rated"} />
+        <TopRatedCarousel />
         <hr className="home-main-divider wow fadeIn" />
       </div>
     );
