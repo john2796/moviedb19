@@ -12,7 +12,7 @@ class NowPlayingCarousel extends Component {
 
     return (
       <div className="upcoming-wrapper">
-        <InfiniteCarousel filterTopics={nowPlaying} />
+        <InfiniteCarousel filterTopics={nowPlaying} tabs='nowPlaying' />
       </div>
     );
   }

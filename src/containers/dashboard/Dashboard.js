@@ -6,7 +6,6 @@ import Footer from "../../components/footer/footer";
 import HomeMain from "../../components/home-main/HomeMain";
 import MovieTvSwitch from "../../components/movie-tv-switch/MovieTvSwitch";
 
-
 class Dashboard extends Component {
   render() {
     return (
