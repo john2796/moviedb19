@@ -5,16 +5,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-family: "Ubuntu", sans-serif;
+
 }
 
 .tmdb-footer-logo {
   max-height: 100px;
   max-width: 200px;
 }
-
-.footer-left-section {
-}
-
 .footer-right-section {
   justify-items: right;
   grid-template-columns: 1fr;
@@ -65,10 +62,6 @@
   margin-top: 60px;
   font-size: 0.9rem;
 }
-
-.footer-social-icons {
-}
-
 .footer-social-icon {
   padding: 10px;
   font-size: 1.5rem;
@@ -93,6 +86,7 @@
     display: grid;
     grid-template-columns: 110px 1fr;
     margin-top: 2rem;
+    
   }
 }
 

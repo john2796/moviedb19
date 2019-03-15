@@ -34,7 +34,6 @@ export const getUpcoming = page => dispatch => {
       })
     )
     .catch(err => {
-      console.log(err);
       dispatch({
         type: ERRORS,
         payload: err
@@ -54,7 +53,6 @@ export const getPopular = page => dispatch => {
       })
     )
     .catch(err => {
-      console.log(err);
       dispatch({
         type: ERRORS,
         payload: err
@@ -74,7 +72,6 @@ export const getNowPlaying = page => dispatch => {
       })
     )
     .catch(err => {
-      console.log(err);
       dispatch({
         type: ERRORS,
         payload: err
@@ -94,7 +91,6 @@ export const getTopRated = page => dispatch => {
       })
     )
     .catch(err => {
-      console.log(err);
       dispatch({
         type: ERRORS,
         payload: err
@@ -114,7 +110,6 @@ export const getGenres = page => dispatch => {
       })
     )
     .catch(err => {
-      console.log(err);
       dispatch({
         type: ERRORS,
         payload: err

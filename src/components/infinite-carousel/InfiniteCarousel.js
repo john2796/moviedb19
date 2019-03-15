@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "./infiniteCarousel.css";
 import { connect } from "react-redux";
-import { CLIENT_RENEG_WINDOW } from "tls";
 
 function NextArrow(props) {
-  const { className, style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <div style={{ ...style }} className="slick-arrow right" onClick={onClick}>
       <i className="fas fa-chevron-right" />
@@ -14,7 +13,7 @@ function NextArrow(props) {
 }
 
 function PrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <div style={{ ...style }} className="slick-arrow left" onClick={onClick}>
       <i className="fas fa-chevron-left" />
@@ -62,7 +61,6 @@ class InfiniteCarousel extends Component {
       <Slider {...settings}>
         {this.props.filterTopics.map(item => {
           let genredynamic = item.genre_ids.slice(0, 2) || 27;
-          console.log("genres", genredynamic);
           return (
             <div className="upcoming-cards" key={item.id}>
               <img
@@ -81,8 +79,9 @@ class InfiniteCarousel extends Component {
                 {this.props.genres
                   .filter(x => genredynamic.includes(x.id))
                   .map(genre => {
-                    console.log("name", genre);
-                    return <span>{genre.name}</span>;
+                    return <span
+                      key={genre.id}
+                    >{genre.name}</span>;
                   })}
               </p>
             </div>
