@@ -25,23 +25,26 @@ class Footer extends Component {
             </h2>
             <nav className="footer-nav">
               <a
-                href="#"
+                href="/#"
                 className="footer-menu-a wow fadeInLeft"
                 data-wow-delay=".7s"
+                alt="footer title"
               >
                 Home
               </a>
               <a
-                href="#"
+                href="/#"
                 className="footer-menu-a wow fadeInLeft"
                 data-wow-delay=".8s"
+                alt="footer title"
               >
                 Profile
               </a>
               <a
-                href="#"
+                href="/#"
                 className="footer-menu-a wow fadeInLeft"
                 data-wow-delay=".9s"
+                alt="footer title"
               >
                 Discover
               </a>
@@ -80,7 +83,7 @@ class Footer extends Component {
             className="footer-social-icons wow fadeInUp"
             data-wow-delay=".5s"
           >
-            <a href="#" className="footer-social-icon">
+            <a href="/#" className="footer-social-icon">
               <FontAwesomeIcon icon="code" />
             </a>
             <a

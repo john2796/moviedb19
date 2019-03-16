@@ -13,7 +13,7 @@ class HeaderCarousel extends Component {
       <div className="header-carousel-container">
         <Carousel
           autoPlay
-          interval="5000"
+          interval={5000}
           infiniteLoop
           showThumbs={false}
           showStatus={false}
@@ -24,6 +24,7 @@ class HeaderCarousel extends Component {
             <img
               src="https://image.tmdb.org/t/p/w1280/7d6EY00g1c39SGZOoCJ5Py9nNth.jpg"
               style={{ opacity: "0.6" }}
+              alt="carousel item"
             />
 
             <div className="carousel-movie-info">
@@ -37,6 +38,7 @@ class HeaderCarousel extends Component {
             <img
               src="https://image.tmdb.org/t/p/w1280/lvjscO8wmpEbIfOEZi92Je8Ktlg.jpg"
               style={{ opacity: "0.6" }}
+              alt="carousel item"
             />
             <div className="carousel-movie-info">
               <h2 className="carousel-movie-title">GLASS</h2>
@@ -47,6 +49,7 @@ class HeaderCarousel extends Component {
             <img
               src="https://image.tmdb.org/t/p/w1280/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg"
               style={{ opacity: "0.6" }}
+              alt="carousel item"
             />
             <div className="carousel-movie-info">
               <h2 className="carousel-movie-title">AVENGERS: INFINITY WAR</h2>
