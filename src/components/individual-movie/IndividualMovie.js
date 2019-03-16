@@ -8,6 +8,7 @@ import { getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres } from '
 class IndividualMovie extends Component {
   componentDidMount() {
     const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres } = this.props
+    getGenres()
     if (tab === 'upcoming') {
       return getUpcoming();
     } else if (tab === 'popular') {
@@ -16,8 +17,6 @@ class IndividualMovie extends Component {
       return getNowPlaying()
     } else if (tab === 'topRated') {
       return getTopRated()
-    } else if (tab === 'genres') {
-      return getGenres()
     }
   }
 
@@ -25,11 +24,13 @@ class IndividualMovie extends Component {
 
   render() {
     const { match, upcoming, popular, nowPlaying, topRated, genres } = this.props
-    const arr = [upcoming, popular, nowPlaying, topRated, genres].filter(x => x.length > 0).flat(1)
+    const arr = [upcoming, popular, nowPlaying, topRated].filter(x => x.length > 0).flat(1)
     const id = parseInt(match.params.id)
     const movie = arr.find((item) => item.id === id);
-    console.log(movie)
-    console.log({ upcoming, popular, nowPlaying, topRated, genres })
+    console.log(genres)
+    const genreOne = movie && movie.genre_ids
+    const genre = movie && genres.filter((x) => genreOne.includes(x.id))
+
     return (
       <div className="individual-movie-parent"
         style={{
@@ -52,7 +53,11 @@ class IndividualMovie extends Component {
               </div>
               <div className="movie-info-main">
                 <img src={`https://image.tmdb.org/t/p/w1280/${movie && movie.poster_path}`} alt="poster_path" />
-                <h1>{movie && movie.title}</h1>
+                <div className="movie-info-main-right">
+                  <h1>{movie && movie.title}</h1>
+                  <p>{movie && movie.vote_average}</p>
+
+                </div>
               </div>
             </div>
 
