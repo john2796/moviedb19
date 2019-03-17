@@ -1,6 +1,10 @@
+.inifinte-card-link {
+  text-decoration: none;
+}
+
 .upcoming-cards {
   max-height: 300px;
-  opacity: 0.4;
+  opacity: 0.5;
   transition: all 200ms ease-in;
   text-align: left;
   cursor: pointer;

@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "./infiniteCarousel.css";
@@ -36,9 +37,9 @@ class InfiniteCarousel extends Component {
       initialSlide: 0,
       responsive: [
         {
-          breakpoint: 900,
+          breakpoint: 1000,
           settings: {
-            slidesToShow: 6,
+            slidesToShow: 4,
             infinite: true,
             dots: true
           }
@@ -57,14 +58,22 @@ class InfiniteCarousel extends Component {
         }
       ]
     };
-    const { tabs } = this.props
+    const { tabs, genres } = this.props
     return (
       <>
         <Slider {...settings}>
           {this.props.filterTopics.map(item => {
+
             let genredynamic = item.genre_ids.slice(0, 2) || 27;
+
+            const genreOne = item && item.genre_ids
+            let genre = item && genres.filter((x) => genreOne.includes(x.id)).map(y => y.name)
+            let secondGenre = genre && genre[0] || genre && genre[2]
+            let firstGenre = genre && genre[1] + " / " || genre && genre[0]
+
+
             return (
-              <Link to={`/movie/${tabs}/${item.id}`} key={item.id} >
+              <Link className="inifinte-card-link" to={`/movie/${tabs}/${item.id}`} key={item.id} >
                 <div className="upcoming-cards">
                   <img
                     className="images"
@@ -79,13 +88,7 @@ class InfiniteCarousel extends Component {
                     {item.vote_average}
                   </p>
                   <p className="carousel-genres">
-                    {this.props.genres
-                      .filter(x => genredynamic.includes(x.id))
-                      .map(genre => {
-                        return <span
-                          key={genre.id}
-                        >{genre.name}</span>;
-                      })}
+                    <span>{firstGenre}  {secondGenre}</span>
                   </p>
                 </div>
               </Link>
