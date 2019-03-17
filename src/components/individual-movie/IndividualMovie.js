@@ -27,9 +27,10 @@ class IndividualMovie extends Component {
     const arr = [upcoming, popular, nowPlaying, topRated].filter(x => x.length > 0).flat(1)
     const id = parseInt(match.params.id)
     const movie = arr.find((item) => item.id === id);
-    console.log(genres)
     const genreOne = movie && movie.genre_ids
-    const genre = movie && genres.filter((x) => genreOne.includes(x.id))
+    let genre = movie && genres.filter((x) => genreOne.includes(x.id)).map(y => y.name)
+    let secondGenre = genre && genre[0] && genre && genre[2]
+
 
     return (
       <div className="individual-movie-parent"
@@ -56,7 +57,9 @@ class IndividualMovie extends Component {
                 <div className="movie-info-main-right">
                   <h1>{movie && movie.title}</h1>
                   <p>{movie && movie.vote_average}</p>
-
+                  <p className="movie-banner-genres">
+                    {genre && genre[1]} | {secondGenre}
+                  </p>
                 </div>
               </div>
             </div>
