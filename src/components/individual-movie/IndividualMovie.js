@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import './individualMovie.css'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { getCast, getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres } from '../../store/actions/movieActions';
+import { getCast, getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres, getTrailer } from '../../store/actions/movieActions';
 import SummaryInfo from './SummaryInfo';
 
 
 class IndividualMovie extends Component {
 
   componentDidMount() {
-    const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres, getCast } = this.props
+    const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres, getCast, getTrailer } = this.props
     getCast(parseInt(this.props.match.params.id))
+    getTrailer(parseInt(this.props.match.params.id))
     getGenres()
     if (tab === 'upcoming') {
       return getUpcoming();
@@ -24,7 +25,7 @@ class IndividualMovie extends Component {
   }
 
   render() {
-    const { match, upcoming, popular, nowPlaying, topRated, genres, history, casts } = this.props
+    const { match, upcoming, popular, nowPlaying, topRated, genres, history, casts, trailers } = this.props
     const arr = [upcoming, popular, nowPlaying, topRated].filter(x => x.length > 0).flat(1)
     const id = parseInt(match.params.id)
     const movie = arr.find((item) => item.id === id);
@@ -81,7 +82,7 @@ class IndividualMovie extends Component {
           </div>
         </div>
         {/* ---------------------------- summary cast section -------------------------- */}
-        <SummaryInfo movie={movie} casts={casts} />
+        <SummaryInfo movie={movie} casts={casts} trailers={trailers} />
       </div>
     );
   }
@@ -94,9 +95,10 @@ const mapStateToProps = state => ({
   topRated: state.movieReducer.topRated,
   genres: state.movieReducer.genres,
   casts: state.movieReducer.casts,
+  trailers: state.movieReducer.trailers,
 });
 
 export default connect(
   mapStateToProps,
-  { getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres, getCast }
+  { getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres, getCast, getTrailer }
 )(withRouter(IndividualMovie));

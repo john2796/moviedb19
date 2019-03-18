@@ -4,7 +4,7 @@ import CaskCarousel from '../cask-carousel/CaskCarousel';
 
 
 
-const SummaryInfo = ({ movie, casts }) => {
+const SummaryInfo = ({ movie, casts, trailers }) => {
 
   return (
     <section className="summary">
@@ -16,10 +16,15 @@ const SummaryInfo = ({ movie, casts }) => {
       <section className="casts">
         <h2 className="secondary-main-header">
           cast
-      </h2>
+        </h2>
         <CaskCarousel filterTopics={casts} tabs='casts' />
+      </section>
 
-
+      <section className="casts trailers">
+        <h2 className="secondary-main-header">
+          trailers
+        </h2>
+        <CaskCarousel filterTopics={trailers} tabs='trailers' />
       </section>
 
     </section>

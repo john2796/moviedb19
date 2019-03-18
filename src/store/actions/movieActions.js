@@ -7,6 +7,7 @@ export const GET_GENRES_SUCCESS = "GET_GENRES_SUCCESS";
 export const GET_NOW_PLAYING_SUCCESS = "GET_NOW_PLAYING_SUCCESS";
 export const GET_TOP_RATED_SUCCESS = "GET_TOP_RATED_SUCCESS";
 export const GET_CASTS_SUCCESS = "GET_CASTS_SUCCESS";
+export const GET_TRAILER_SUCCESS = "GET_TRAILER_SUCCESS";
 
 const UPCOMING =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
@@ -25,7 +26,7 @@ const TOP_RATED =
 
 
 
-export const getUpcoming = page => dispatch => {
+export const getUpcoming = () => dispatch => {
   dispatch(setLoading());
 
   axios
@@ -44,7 +45,7 @@ export const getUpcoming = page => dispatch => {
     });
 };
 
-export const getPopular = page => dispatch => {
+export const getPopular = () => dispatch => {
   dispatch(setLoading());
 
   axios
@@ -63,7 +64,7 @@ export const getPopular = page => dispatch => {
     });
 };
 
-export const getNowPlaying = page => dispatch => {
+export const getNowPlaying = () => dispatch => {
   dispatch(setLoading());
 
   axios
@@ -82,7 +83,7 @@ export const getNowPlaying = page => dispatch => {
     });
 };
 
-export const getTopRated = page => dispatch => {
+export const getTopRated = () => dispatch => {
   dispatch(setLoading());
 
   axios
@@ -101,7 +102,7 @@ export const getTopRated = page => dispatch => {
     });
 };
 
-export const getGenres = page => dispatch => {
+export const getGenres = () => dispatch => {
   dispatch(setLoading());
 
   axios
@@ -119,15 +120,33 @@ export const getGenres = page => dispatch => {
       });
     });
 };
+
+
 export const getCast = id => dispatch => {
   dispatch(setLoading());
-
   axios
     .get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=64c2b191aa0739bffd252c8287ae39c1`)
     .then(res =>
       dispatch({
         type: GET_CASTS_SUCCESS,
         payload: res.data.cast
+      })
+    )
+    .catch(err => {
+      dispatch({
+        type: ERRORS,
+        payload: err
+      });
+    });
+};
+export const getTrailer = id => dispatch => {
+  dispatch(setLoading());
+  axios
+    .get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US`)
+    .then(res =>
+      dispatch({
+        type: GET_TRAILER_SUCCESS,
+        payload: res.data.results
       })
     )
     .catch(err => {
