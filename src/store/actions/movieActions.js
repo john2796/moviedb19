@@ -160,7 +160,7 @@ export const getTrailer = id => dispatch => {
 export const getReviews = id => dispatch => {
   dispatch(setLoading());
   axios
-    .get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US`)
+    .get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1`)
     .then(res =>
       dispatch({
         type: GET_REVIEWS_SUCCESS,

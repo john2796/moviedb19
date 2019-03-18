@@ -7,6 +7,7 @@ class SummaryInfo extends Component {
   render() {
     const { movie, casts, trailers } = this.props
     const filterNoImageCast = casts.filter((x) => x.profile_path !== null);
+    const getTwoTrailer = trailers.filter((x, idx) => idx < 2)
 
     return (
       <>
@@ -28,7 +29,7 @@ class SummaryInfo extends Component {
               trailers
           </h2>
             <div className="trailer-video-wrapper">
-              {trailers.map((item) =>
+              {getTwoTrailer.map((item) =>
                 <iframe width="320" height="250"
                   key={item.id}
                   title={item.name}

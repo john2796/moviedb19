@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './individualMovie.css'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { getCast, getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres, getTrailer } from '../../store/actions/movieActions';
+import { getCast, getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres, getTrailer, getReviews } from '../../store/actions/movieActions';
 import SummaryInfo from './SummaryInfo';
 
 
@@ -12,6 +12,7 @@ class IndividualMovie extends Component {
     const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres, getCast, getTrailer } = this.props
     getCast(parseInt(this.props.match.params.id))
     getTrailer(parseInt(this.props.match.params.id))
+    getReviews(parseInt(this.props.match.params.id))
     getGenres()
     if (tab === 'upcoming') {
       return getUpcoming();
@@ -100,5 +101,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres, getCast, getTrailer }
+  { getReviews, getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres, getCast, getTrailer }
 )(withRouter(IndividualMovie));
