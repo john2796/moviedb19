@@ -64,7 +64,7 @@ class InfiniteCarousel extends Component {
         <Slider {...settings}>
           {this.props.filterTopics.map(item => {
 
-            let genredynamic = item.genre_ids.slice(0, 2) || 27;
+
 
             const genreOne = item && item.genre_ids
             let genre = item && genres.filter((x) => genreOne.includes(x.id)).map(y => y.name)
