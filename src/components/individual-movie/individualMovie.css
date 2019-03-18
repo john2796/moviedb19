@@ -27,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   border:1px solid greenyellow;
-  padding-bottom: 55%;
+  padding-bottom: 65vh;
   padding-top: 8%;
 
 }
@@ -58,6 +58,17 @@
   font-weight: 800;
 }
 .movie-banner-genres {
-  font-weight: 600; 
-  color:#666767;
+  font-weight: 800; 
+  color:#787675;
+}
+
+
+.release-en {
+  color: #BCBCBC;
+  padding: 2% 0;
+}
+.avg-rate-fav {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
 }

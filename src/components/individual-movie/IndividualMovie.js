@@ -3,6 +3,7 @@ import './individualMovie.css'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getUpcoming, getPopular, getNowPlaying, getTopRated, getGenres } from '../../store/actions/movieActions';
+import SummaryInfo from './SummaryInfo';
 
 
 class IndividualMovie extends Component {
@@ -23,7 +24,7 @@ class IndividualMovie extends Component {
 
 
   render() {
-    const { match, upcoming, popular, nowPlaying, topRated, genres } = this.props
+    const { match, upcoming, popular, nowPlaying, topRated, genres, history } = this.props
     const arr = [upcoming, popular, nowPlaying, topRated].filter(x => x.length > 0).flat(1)
     const id = parseInt(match.params.id)
     const movie = arr.find((item) => item.id === id);
@@ -49,14 +50,28 @@ class IndividualMovie extends Component {
 
             <div className="individual-movie-inner">
               <div className="movie-controls-main">
-                <p>left</p>
-                <p>right</p>
+                <span>
+                  <i className="fas fa-chevron-left"
+                    onClick={() => history.goBack()}
+                  ></i>
+                </span>
+                <span>
+                  <i className="fas fa-share"></i>
+                </span>
+
               </div>
               <div className="movie-info-main">
                 <img src={`https://image.tmdb.org/t/p/w1280/${movie && movie.poster_path}`} alt="poster_path" />
                 <div className="movie-info-main-right">
                   <h1>{movie && movie.title}</h1>
-                  <p>{movie && movie.vote_average}</p>
+
+                  {/* ------------------------- avg rate & fav  -------------------------- */}
+                  <div className="avg-rate-fav">
+                    <span>{movie && movie.vote_average}</span>
+                    <span><i className="fas fa-heart"></i></span>
+                  </div>
+                  <p className="release-en" >Released | EN</p>
+                  {/* ---------------------------- genre section -------------------------- */}
                   <p className="movie-banner-genres">
                     {genre && genre[1]} | {secondGenre}
                   </p>
@@ -67,6 +82,8 @@ class IndividualMovie extends Component {
           </div>
         </div>
 
+        {/* ---------------------------- summary section -------------------------- */}
+        <SummaryInfo />
       </div>
     );
   }
