@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import InfiniteCarousel from "../infinite-carousel/InfiniteCarousel";
 import { getUpcoming } from "../../store/actions/movieActions";
+
+
 class TopicCarousel extends Component {
   componentDidMount() {
     this.props.getUpcoming();

@@ -1,24 +1,33 @@
+.cast-wrapper { 
+ max-width: 95%;
+  margin: 5% auto;
+}
 .inifinte-card-link {
   text-decoration: none;
+  
 }
 
-.upcoming-cards {
+.casts-cards {
   max-height: 300px;
   opacity: 0.5;
+  padding-right: 10%;
   transition: all 200ms ease-in;
   text-align: left;
   cursor: pointer;
+  
+  
 }
 
-.upcoming-cards .images {
+.casts-cards .images {
   width: 85%;
   position: relative;
   max-height: 300px;
+  border-radius: 10%;
 }
-.upcoming-cards:hover {
+.casts-cards:hover {
   opacity: 1;
 }
-.upcoming-cards .images:hover {
+.casts-cards .images:hover {
   opacity: 1;
   -webkit-transform: scale(1.1);
   -ms-transition: all 200ms ease-in;
@@ -29,55 +38,33 @@
   transform: scale(1.1);
 }
 
-.carousel-title {
+.casts-title {
   color: #ffffff;
   padding-top: 2rem;
   margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  line-height: 1.2;
 }
-.slick-arrow {
+.slick-arrow-cast {
   color: #ffffff;
   display: inline-block;
 }
 
-.right {
+.right-cast {
   position: absolute;
-  top: 69px;
+  top: 45px;
   right: -60px;
 }
-.left {
+.left-cast {
   position: absolute;
-  bottom: 150px;
+  bottom: 130px;
   left: -60px;
 }
-.left .fa-chevron-left,
-.right .fa-chevron-right {
+.left-cast .fa-chevron-left,
+.right-cast .fa-chevron-right {
   padding: 10px;
   margin: 0 auto;
   color: #0364e5;
-}
-
-.carousel-rating {
-  position: absolute;
-  margin-top: 1rem;
-  background: black;
-  color: white;
-  top: 0;
-  line-height: 1.2;
-  font-size: 0.8rem;
-  padding-right: 3px;
-  opacity: 0.8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fa-star {
-  font-size: 0.6rem;
-  margin: 0;
-  padding: 3px;
-}
-.carousel-genres span {
-  color: white;
-  font-size: 0.7rem;
-  text-align: left;
 }
