@@ -8,6 +8,7 @@ export const GET_NOW_PLAYING_SUCCESS = "GET_NOW_PLAYING_SUCCESS";
 export const GET_TOP_RATED_SUCCESS = "GET_TOP_RATED_SUCCESS";
 export const GET_CASTS_SUCCESS = "GET_CASTS_SUCCESS";
 export const GET_TRAILER_SUCCESS = "GET_TRAILER_SUCCESS";
+export const GET_REVIEWS_SUCCESS = "GET_REVIEWS_SUCCESS";
 
 const UPCOMING =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
@@ -146,6 +147,23 @@ export const getTrailer = id => dispatch => {
     .then(res =>
       dispatch({
         type: GET_TRAILER_SUCCESS,
+        payload: res.data.results
+      })
+    )
+    .catch(err => {
+      dispatch({
+        type: ERRORS,
+        payload: err
+      });
+    });
+};
+export const getReviews = id => dispatch => {
+  dispatch(setLoading());
+  axios
+    .get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US`)
+    .then(res =>
+      dispatch({
+        type: GET_REVIEWS_SUCCESS,
         payload: res.data.results
       })
     )
