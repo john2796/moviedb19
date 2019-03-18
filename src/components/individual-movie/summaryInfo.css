@@ -9,9 +9,10 @@
   padding-top: 5%;
 }
 .summary-overview {
-  color: #ffffffbf;
-  line-height: 1.2;
-  font-size: 1.2rem;
+  color: #b4b3bb;
+  line-height: 1.55;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 /* ---------- global individual page style --------- */
