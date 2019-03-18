@@ -5,7 +5,7 @@ import CaskCarousel from '../cask-carousel/CaskCarousel';
 
 class SummaryInfo extends Component {
   render() {
-    const { movie, casts, trailers } = this.props
+    const { movie, casts, trailers, reviews } = this.props
     const filterNoImageCast = casts.filter((x) => x.profile_path !== null);
     const getTwoTrailer = trailers.filter((x, idx) => idx < 2)
 
@@ -48,17 +48,30 @@ class SummaryInfo extends Component {
             <h2 className="secondary-main-header">
               popular reviews
             </h2>
-            <div className="reviews-message">
-              <div className="review-content-innner">
-                <h3>testing</h3>
-                <p className="actual-message">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deleniti quae fugiat natus ad corrupti odio dicta earum reprehenderit suscipit, officiis similique, porro saepe pariatur eum eaque nihil iusto error?</p>
 
-                <p className="see-full-review">See full review
+            {reviews.map((item, idx) => {
+              return (
+                <div className="reviews-message"
+                  key={item.id}
+                  style={
+                    idx % 2 === 0
+                      ? { borderLeft: "5px solid #ffff" }
+                      : { borderRight: "5px solid #ffff" }
+                  }
+                >
+                  <div className="review-content-innner">
+                    <h3>{item.author}</h3>
+                    <p className="actual-message">{item.content.slice(0, 300)}...</p>
+
+                    <a target="_blank" rel="noopener noreferrer" href={item.url} className="see-full-review">See full review
                 <span><i className="fas fa-chevron-right right-arrow-review"></i></span>
-                </p>
+                    </a>
+                  </div>
+                </div>
+              )
+            })}
 
-              </div>
-            </div>
+
           </section>
 
 

@@ -9,7 +9,7 @@ import SummaryInfo from './SummaryInfo';
 class IndividualMovie extends Component {
 
   componentDidMount() {
-    const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres, getCast, getTrailer } = this.props
+    const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres, getCast, getTrailer, getReviews } = this.props
     getCast(parseInt(this.props.match.params.id))
     getTrailer(parseInt(this.props.match.params.id))
     getReviews(parseInt(this.props.match.params.id))
@@ -26,7 +26,7 @@ class IndividualMovie extends Component {
   }
 
   render() {
-    const { match, upcoming, popular, nowPlaying, topRated, genres, history, casts, trailers } = this.props
+    const { match, upcoming, popular, nowPlaying, topRated, genres, history, casts, trailers, reviews } = this.props
     const arr = [upcoming, popular, nowPlaying, topRated].filter(x => x.length > 0).flat(1)
     const id = parseInt(match.params.id)
     const movie = arr.find((item) => item.id === id);
@@ -83,7 +83,7 @@ class IndividualMovie extends Component {
           </div>
         </div>
         {/* ---------------------------- summary cast section -------------------------- */}
-        <SummaryInfo movie={movie} casts={casts} trailers={trailers} />
+        <SummaryInfo movie={movie} casts={casts} trailers={trailers} reviews={reviews} />
       </div>
     );
   }
@@ -97,6 +97,7 @@ const mapStateToProps = state => ({
   genres: state.movieReducer.genres,
   casts: state.movieReducer.casts,
   trailers: state.movieReducer.trailers,
+  reviews: state.movieReducer.reviews,
 });
 
 export default connect(
