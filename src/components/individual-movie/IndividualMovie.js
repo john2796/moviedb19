@@ -8,41 +8,29 @@ import SummaryInfo from './SummaryInfo';
 
 class IndividualMovie extends Component {
 
-  async componentDidMount() {
-    try {
-      const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres } = this.props
-      await getGenres()
-      if (tab === 'upcoming') {
-        return getUpcoming();
-      } else if (tab === 'popular') {
-        return getPopular()
-      } else if (tab === 'nowPlaying') {
-        return getNowPlaying()
-      } else if (tab === 'topRated') {
-        return getTopRated()
-      }
-      await this.fetchCast();
-
-    } catch (error) {
-      console.log(error)
+  componentDidMount() {
+    const { tab, getPopular, getUpcoming, getNowPlaying, getTopRated, getGenres, getCast } = this.props
+    getCast(parseInt(this.props.match.params.id))
+    getGenres()
+    if (tab === 'upcoming') {
+      return getUpcoming();
+    } else if (tab === 'popular') {
+      return getPopular()
+    } else if (tab === 'nowPlaying') {
+      return getNowPlaying()
+    } else if (tab === 'topRated') {
+      return getTopRated()
     }
   }
 
-  fetchCast = async (id) => {
-    const movie_id = await id
-    await this.props.getCast(movie_id)
-  }
-
-
   render() {
-    const { match, upcoming, popular, nowPlaying, topRated, genres, history } = this.props
+    const { match, upcoming, popular, nowPlaying, topRated, genres, history, casts } = this.props
     const arr = [upcoming, popular, nowPlaying, topRated].filter(x => x.length > 0).flat(1)
     const id = parseInt(match.params.id)
     const movie = arr.find((item) => item.id === id);
     const genreOne = movie && movie.genre_ids
     let genre = movie && genres.filter((x) => genreOne.includes(x.id)).map(y => y.name)
     let secondGenre = genre && genre[0] && genre && genre[2]
-    this.fetchCast(movie && movie.id)
 
     return (
       <div className="individual-movie-parent"
@@ -93,7 +81,7 @@ class IndividualMovie extends Component {
           </div>
         </div>
         {/* ---------------------------- summary cast section -------------------------- */}
-        <SummaryInfo movie={movie} />
+        <SummaryInfo movie={movie} casts={casts} />
       </div>
     );
   }
@@ -105,6 +93,7 @@ const mapStateToProps = state => ({
   nowPlaying: state.movieReducer.nowPlaying,
   topRated: state.movieReducer.topRated,
   genres: state.movieReducer.genres,
+  casts: state.movieReducer.casts,
 });
 
 export default connect(

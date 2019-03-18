@@ -1,0 +1,70 @@
+.cast-wrapper { 
+ max-width: 95%;
+  margin: 5% auto;
+}
+.inifinte-card-link {
+  text-decoration: none;
+  
+}
+
+.casts-cards {
+  max-height: 300px;
+  opacity: 0.5;
+  padding-right: 10%;
+  transition: all 200ms ease-in;
+  text-align: left;
+  cursor: pointer;
+  
+  
+}
+
+.casts-cards .images {
+  width: 85%;
+  position: relative;
+  max-height: 300px;
+  border-radius: 10%;
+}
+.casts-cards:hover {
+  opacity: 1;
+}
+.casts-cards .images:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.1);
+  transition: all 200ms ease-in;
+  transform: scale(1.1);
+}
+
+.casts-title {
+  color: #ffffff;
+  padding-top: 2rem;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  line-height: 1.2;
+}
+.slick-arrow-cast {
+  color: #ffffff;
+  display: inline-block;
+}
+
+.right-cast {
+  position: absolute;
+  top: 45px;
+  right: -60px;
+}
+.left-cast {
+  position: absolute;
+  bottom: 130px;
+  left: -60px;
+}
+.left-cast .fa-chevron-left,
+.right-cast .fa-chevron-right {
+  padding: 10px;
+  margin: 0 auto;
+  color: #0364e5;
+}

@@ -1,14 +1,14 @@
 /* eslint-disable no-mixed-operators */
+import './caskCarousel.css'
 import React, { Component } from "react";
 import Slider from "react-slick";
-import "./infiniteCarousel.css";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
 function NextArrow(props) {
   const { style, onClick } = props;
   return (
-    <div style={{ ...style }} className="slick-arrow right" onClick={onClick}>
+    <div style={{ ...style }} className="slick-arrow-cast right-cast" onClick={onClick}>
       <i className="fas fa-chevron-right" />
     </div>
   );
@@ -17,12 +17,12 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { style, onClick } = props;
   return (
-    <div style={{ ...style }} className="slick-arrow left" onClick={onClick}>
+    <div style={{ ...style }} className="slick-arrow-cast left-cast" onClick={onClick}>
       <i className="fas fa-chevron-left" />
     </div>
   );
 }
-class InfiniteCarousel extends Component {
+class CaskCarousel extends Component {
   render() {
     const settings = {
       className: "center",
@@ -58,40 +58,31 @@ class InfiniteCarousel extends Component {
         }
       ]
     };
-    const { tabs, genres } = this.props
+    const { tabs } = this.props
     return (
       <>
+      <div className="cast-wrapper">
         <Slider {...settings}>
           {this.props.filterTopics.map(item => {
-            const genreOne = item && item.genre_ids
-            let genre = item && genres.filter((x) => genreOne.includes(x.id)).map(y => y.name)
-            let secondGenre = genre && genre[0] || genre && genre[2]
-            let firstGenre = genre && genre[1] + " / " || genre && genre[0]
-
+            
 
             return (
               <Link className="inifinte-card-link" to={`/movie/${tabs}/${item.id}`} key={item.id} >
-                <div className="upcoming-cards">
+
+                <div className="casts-cards">
                   <img
                     className="images"
-                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                    alt={item.original_title}
+                    src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                    alt={item.name}
                   />
-                  <p className="carousel-title">{item.title}</p>
-                  <p className="carousel-rating">
-                    <span>
-                      <i className="fas fa-star" />
-                    </span>
-                    {item.vote_average}
-                  </p>
-                  <p className="carousel-genres">
-                    <span>{firstGenre}  {secondGenre}</span>
-                  </p>
+                  <p className="casts-title">{item.name}</p>
                 </div>
+
               </Link>
             );
           })}
         </Slider>
+        </div>
       </>
     );
   }
@@ -101,4 +92,4 @@ const mapStateToProps = state => ({
   genres: state.movieReducer.genres
 });
 
-export default connect(mapStateToProps)(InfiniteCarousel);
+export default connect(mapStateToProps)(CaskCarousel);
