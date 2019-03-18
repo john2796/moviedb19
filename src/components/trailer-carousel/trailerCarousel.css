@@ -1,0 +1,27 @@
+.trailer-wrapper { 
+  max-width: 95%;
+   margin: 5% auto;
+ }
+
+ .slick-arrow-trailer {
+   color: #ffffff;
+   display: inline-block;
+ }
+ 
+ .right-trailer {
+   position: absolute;
+   top: 45px;
+   right: -60px;
+ }
+ .left-trailer {
+   position: absolute;
+   bottom: 130px;
+   left: -60px;
+ }
+ .left-trailer .fa-chevron-left,
+ .right-trailer .fa-chevron-right {
+   padding: 10px;
+   margin: 0 auto;
+   color: #0364e5;
+ }
+ 

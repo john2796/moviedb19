@@ -1,6 +1,8 @@
 import React from 'react';
 import './summaryInfo.css'
 import CaskCarousel from '../cask-carousel/CaskCarousel';
+import TrailerCarousel from '../trailer-carousel/TrailerCarousel';
+
 
 
 
@@ -24,7 +26,7 @@ const SummaryInfo = ({ movie, casts, trailers }) => {
         <h2 className="secondary-main-header">
           trailers
         </h2>
-        <CaskCarousel filterTopics={trailers} tabs='trailers' />
+        <TrailerCarousel trailers={trailers} />
       </section>
 
     </section>

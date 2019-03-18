@@ -1,14 +1,14 @@
 /* eslint-disable no-mixed-operators */
-import './caskCarousel.css'
+import './trailerCarousel.css'
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+
+
 
 function NextArrow(props) {
   const { style, onClick } = props;
   return (
-    <div style={{ ...style }} className="slick-arrow-cast right-cast" onClick={onClick}>
+    <div style={{ ...style }} className="slick-arrow-trailer right-trailer" onClick={onClick}>
       <i className="fas fa-chevron-right" />
     </div>
   );
@@ -17,12 +17,12 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { style, onClick } = props;
   return (
-    <div style={{ ...style }} className="slick-arrow-cast left-cast" onClick={onClick}>
+    <div style={{ ...style }} className="slick-arrow-trailer left-trailer" onClick={onClick}>
       <i className="fas fa-chevron-left" />
     </div>
   );
 }
-class CaskCarousel extends Component {
+class TrailerCarousel extends Component {
   render() {
     const settings = {
       className: "center",
@@ -58,27 +58,15 @@ class CaskCarousel extends Component {
         }
       ]
     };
-    const { tabs } = this.props
     return (
       <>
-        <div className="cast-wrapper">
+        <div className="trailer-wrapper">
           <Slider {...settings}>
-            {this.props.filterTopics.map(item => {
-
-
+            {this.props.trailers.map(item => {
               return (
-                <Link className="inifinte-card-link" to={`/movie/${tabs}/${item.id}`} key={item.id} >
-
-                  <div className="casts-cards">
-                    <img
-                      className="images"
-                      src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                      alt={item.name}
-                    />
-                    <p className="casts-title">{item.name}</p>
-                  </div>
-
-                </Link>
+                <iframe width="420" height="200"
+                  src={`https://www.youtube.com/embed/${item.key}`}>
+                </iframe>
               );
             })}
           </Slider>
@@ -88,8 +76,5 @@ class CaskCarousel extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  genres: state.movieReducer.genres
-});
 
-export default connect(mapStateToProps)(CaskCarousel);
+export default TrailerCarousel;
