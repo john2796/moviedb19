@@ -30,7 +30,10 @@ class SummaryInfo extends Component {
           </h2>
             <div className="trailer-video-wrapper">
               {getTwoTrailer.map((item) =>
-                <iframe width="320" height="250"
+                <iframe
+                  width="370"
+                  height="310"
+                  align="center"
                   key={item.id}
                   title={item.name}
                   className="youtube"
