@@ -6,6 +6,7 @@ export const GET_POPULAR_SUCCESS = "GET_POPULAR_SUCCESS";
 export const GET_GENRES_SUCCESS = "GET_GENRES_SUCCESS";
 export const GET_NOW_PLAYING_SUCCESS = "GET_NOW_PLAYING_SUCCESS";
 export const GET_TOP_RATED_SUCCESS = "GET_TOP_RATED_SUCCESS";
+export const GET_CASTS_SUCCESS = "GET_CASTS_SUCCESS";
 
 const UPCOMING =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
@@ -21,6 +22,8 @@ const NOW_PLAYING =
 
 const TOP_RATED =
   "https://api.themoviedb.org/3/movie/top_rated?api_key=64c2b191aa0739bffd252c8287ae39c1&language=en-US&page=1";
+
+
 
 export const getUpcoming = page => dispatch => {
   dispatch(setLoading());
@@ -116,6 +119,25 @@ export const getGenres = page => dispatch => {
       });
     });
 };
+export const getCast = id => dispatch => {
+  dispatch(setLoading());
+
+  axios
+    .get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=64c2b191aa0739bffd252c8287ae39c1`)
+    .then(res =>
+      dispatch({
+        type: GET_CASTS_SUCCESS,
+        payload: res.data.cast
+      })
+    )
+    .catch(err => {
+      dispatch({
+        type: ERRORS,
+        payload: err
+      });
+    });
+};
+
 
 export const setLoading = param => {
   return {

@@ -81,9 +81,8 @@ class IndividualMovie extends Component {
 
           </div>
         </div>
-
         {/* ---------------------------- summary section -------------------------- */}
-        <SummaryInfo />
+        <SummaryInfo movie={movie} />
       </div>
     );
   }

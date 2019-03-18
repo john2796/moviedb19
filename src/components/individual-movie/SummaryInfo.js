@@ -1,10 +1,14 @@
 import React from 'react';
 import './summaryInfo.css'
-const SummaryInfo = () => {
+
+
+
+const SummaryInfo = ({ movie }) => {
   return (
     <section className="summary">
       <div className="summary-info">
-        <h1>summary</h1>
+        <h2 className="secondary-main-header">summary</h2>
+        <p className="summary-overview">{movie && movie.overview}</p>
       </div>
     </section>
   );

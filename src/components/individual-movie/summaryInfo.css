@@ -2,3 +2,23 @@
   background: #161130;
   padding-bottom: 100vh;
 }
+
+.summary-info {
+  margin: 0 auto;
+  width: 85%;
+  padding-top: 5%;
+}
+.summary-overview {
+  color: #9D9CA6;
+  line-height: 1.2;
+  font-size: 1.2rem;
+}
+
+/* ---------- global individual page style --------- */
+.secondary-main-header {
+   color: #fff;
+   font-size: 1.6rem;
+   text-transform: uppercase;
+   font-weight: 700;
+   padding: 3% 0;
+}
