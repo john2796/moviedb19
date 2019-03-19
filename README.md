@@ -30,16 +30,16 @@
    - [x] A list of 20-30 movies with their posters, titles, and rating, most likely ordered by release date/popularity. Add pagination to this functionality with previous/next buttons.
 
 6. Member Page (optional)
-   - [] Add sections for favorite movies, tv shows, movies you've rated, tv shows you've rated
-   - [] Log out button
-   - [] Profile picture
+   - [x] Add sections for favorite movies, tv shows, movies you've rated, tv shows you've rated
+   - [x] Log out button
+   - [x] Profile picture
 
 ---
 
 ## Stretch
 
-- [] Add pagination on infinite carousels
-- [] Add Socials Login Option \*etc (fb, twitter , github, google)
+- [x] Add pagination on infinite carousels
+- [x] Add Socials Login Option \*etc (fb, twitter , github, google)
 
 ## Authors
 
