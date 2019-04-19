@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import InfiniteCarousel from "../infinite-carousel/InfiniteCarousel";
 import { getUpcoming } from "../../store/actions/movieActions";
 
+import InfiniteCarousel from "../infinite-carousel/InfiniteCarousel";
 
 class TopicCarousel extends Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class TopicCarousel extends Component {
 
     return (
       <div className="upcoming-wrapper">
-        <InfiniteCarousel filterTopics={upcoming} tabs='upcoming' />
+        <InfiniteCarousel filterTopics={upcoming} tabs="upcoming" />
       </div>
     );
   }
