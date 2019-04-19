@@ -40,7 +40,7 @@ class CaskCarousel extends Component {
       centerPadding: "60px",
       slidesToShow: 6,
       speed: 400,
-      lazyLoad: true,
+
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
       initialSlide: 0,

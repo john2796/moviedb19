@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "./infiniteCarousel.css";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function NextArrow(props) {
   const { style, onClick } = props;
@@ -31,7 +31,6 @@ class InfiniteCarousel extends Component {
       centerPadding: "60px",
       slidesToShow: 6,
       speed: 400,
-      lazyLoad: true,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
       initialSlide: 0,
@@ -58,19 +57,24 @@ class InfiniteCarousel extends Component {
         }
       ]
     };
-    const { tabs, genres } = this.props
+    const { tabs, genres } = this.props;
     return (
       <>
         <Slider {...settings}>
           {this.props.filterTopics.map(item => {
-            const genreOne = item && item.genre_ids
-            let genre = item && genres.filter((x) => genreOne.includes(x.id)).map(y => y.name)
-            let secondGenre = genre && genre[0] || genre && genre[2]
-            let firstGenre = genre && genre[1] + " / " || genre && genre[0]
-
+            const genreOne = item && item.genre_ids;
+            let genre =
+              item &&
+              genres.filter(x => genreOne.includes(x.id)).map(y => y.name);
+            let secondGenre = (genre && genre[0]) || (genre && genre[2]);
+            let firstGenre = (genre && genre[1] + " / ") || (genre && genre[0]);
 
             return (
-              <Link className="inifinte-card-link" to={`/movie/${tabs}/${item.id}`} key={item.id} >
+              <Link
+                className="inifinte-card-link"
+                to={`/movie/${tabs}/${item.id}`}
+                key={item.id}
+              >
                 <div className="upcoming-cards">
                   <img
                     className="images"
@@ -85,7 +89,9 @@ class InfiniteCarousel extends Component {
                     {item.vote_average}
                   </p>
                   <p className="carousel-genres">
-                    <span>{firstGenre}  {secondGenre}</span>
+                    <span>
+                      {firstGenre} {secondGenre}
+                    </span>
                   </p>
                 </div>
               </Link>
