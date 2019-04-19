@@ -1,3 +1,12 @@
 .App {
   background: #161130;
 }
+
+/* <-------- global styling ------> */
+
+/* <-------- This for single page movie reviews ------> */
+.no-data {
+  font-size: 1rem;
+  color: #ffff;
+  font-weight: 700;
+}

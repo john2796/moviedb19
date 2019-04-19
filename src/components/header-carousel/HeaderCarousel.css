@@ -1,13 +1,5 @@
 .header-carousel-container {
-  max-height: 91vh;
-  width: 100%;
-  position: relative;
-  top: 5rem;
-}
-@media (max-width: 900px) {
-  .header-carousel-container {
-    top: 0;
-  }
+  padding-top: 50px;
 }
 
 .carousel-movie-info {
