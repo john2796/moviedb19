@@ -1,14 +1,19 @@
 /* eslint-disable no-mixed-operators */
-import './caskCarousel.css'
 import React, { Component } from "react";
-import Slider from "react-slick";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+import "./caskCarousel.css";
+import Slider from "react-slick";
 
 function NextArrow(props) {
   const { style, onClick } = props;
   return (
-    <div style={{ ...style }} className="slick-arrow-cast right-cast" onClick={onClick}>
+    <div
+      style={{ ...style }}
+      className="slick-arrow-cast right-cast"
+      onClick={onClick}
+    >
       <i className="fas fa-chevron-right" />
     </div>
   );
@@ -17,7 +22,11 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { style, onClick } = props;
   return (
-    <div style={{ ...style }} className="slick-arrow-cast left-cast" onClick={onClick}>
+    <div
+      style={{ ...style }}
+      className="slick-arrow-cast left-cast"
+      onClick={onClick}
+    >
       <i className="fas fa-chevron-left" />
     </div>
   );
@@ -58,30 +67,36 @@ class CaskCarousel extends Component {
         }
       ]
     };
-    const { tabs } = this.props
+    const { tabs, filterTopics } = this.props;
     return (
       <>
-      <div className="cast-wrapper">
-        <Slider {...settings}>
-          {this.props.filterTopics.map(item => {
-            
-
-            return (
-              <Link className="inifinte-card-link" to={`/movie/${tabs}/${item.id}`} key={item.id} >
-
-                <div className="casts-cards">
-                  <img
-                    className="images"
-                    src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                    alt={item.name}
-                  />
-                  <p className="casts-title">{item.name}</p>
-                </div>
-
-              </Link>
-            );
-          })}
-        </Slider>
+        <div className="cast-wrapper">
+          <Slider {...settings}>
+            {!filterTopics ? (
+              <h2 className="no-data">No cast available ...</h2>
+            ) : (
+              filterTopics.map(item => {
+                return (
+                  <Link
+                    className="inifinte-card-link"
+                    to={`/movie/${tabs}/${item.id}`}
+                    key={item.id}
+                  >
+                    <div className="casts-cards">
+                      <img
+                        className="images"
+                        src={`https://image.tmdb.org/t/p/w500${
+                          item.profile_path
+                        }`}
+                        alt={item.name}
+                      />
+                      <p className="casts-title">{item.name}</p>
+                    </div>
+                  </Link>
+                );
+              })
+            )}
+          </Slider>
         </div>
       </>
     );
