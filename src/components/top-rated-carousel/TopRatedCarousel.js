@@ -11,7 +11,7 @@ class TopicCarousel extends Component {
 
     return (
       <div className="upcoming-wrapper">
-        <InfiniteCarousel filterTopics={topRated} tabs='topRated' />
+        <InfiniteCarousel filterTopics={topRated} tabs="topRated" />
       </div>
     );
   }

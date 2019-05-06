@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import "./HomeMain.css";
+import { getGenres } from "../../store/actions/movieActions";
+import { connect } from "react-redux";
+
 import WOW from "wowjs";
+
+import "./HomeMain.css";
 import TopicHeader from "./TopicHeader";
 import UpcomingCarousel from "../upcoming-carousel/UpcomingCarousel";
 import PopularCarousel from "../popular-carousel/PopularCarousel";
 import NowPlayingCarousel from "../now-playing-carousel/NowPlayingCarousel";
 import TopRatedCarousel from "../top-rated-carousel/TopRatedCarousel";
-import { getGenres } from "../../store/actions/movieActions";
-import { connect } from "react-redux";
 
 class HomeMain extends Component {
   constructor(props) {

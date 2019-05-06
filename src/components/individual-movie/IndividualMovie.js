@@ -31,6 +31,7 @@ class IndividualMovie extends Component {
     getTrailer(parseInt(this.props.match.params.id));
     getReviews(parseInt(this.props.match.params.id));
     getGenres();
+
     if (tab === "upcoming") {
       return getUpcoming();
     } else if (tab === "popular") {
