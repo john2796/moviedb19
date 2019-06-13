@@ -40,3 +40,7 @@
     padding: 15px 0;
   }
 }
+/* overide fixed position */
+.mui-fixed {
+  position: initial !important;
+}

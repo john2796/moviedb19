@@ -25,7 +25,7 @@ class Navbar extends Component {
     return (
       <>
         <div className={classes.root} id="navbar-desktop">
-          <AppBar position="fixed" className="navbar">
+          <AppBar className="navbar">
             <Toolbar className="toolbar">
               <div
                 className="nav-item mobile-item wow fadeInLeft"

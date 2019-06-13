@@ -1,10 +1,9 @@
-.cast-wrapper { 
- max-width: 95%;
+.cast-wrapper {
+  max-width: 95%;
   margin: 5% auto;
 }
 .inifinte-card-link {
   text-decoration: none;
-  
 }
 
 .casts-cards {
@@ -14,8 +13,6 @@
   transition: all 200ms ease-in;
   text-align: left;
   cursor: pointer;
-  
-  
 }
 
 .casts-cards .images {
