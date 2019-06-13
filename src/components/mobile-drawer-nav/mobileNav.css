@@ -12,7 +12,7 @@
 @media (max-width: 900px) {
   #mobile_hamburger {
     position: fixed;
-    top: 8px;
+    top: -2px;
     z-index: 99;
     left: 88vw;
     display: block;
@@ -45,4 +45,9 @@
     padding: 5px 0;
     border-bottom: 4px solid #1b262a;
   }
+}
+
+.BurgerBox {
+  width: 24px !important;
+  position: initial;
 }
