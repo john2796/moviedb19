@@ -14,14 +14,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        {/* Routes dynamic */}
         <Route exact path="/" component={Dashboard} />
-
         <Route
           path={`/movie/${tab}/:id`}
           render={props => <IndividualMovie {...props} tab={tab} />}
         />
-
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
       </div>

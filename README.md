@@ -1,5 +1,6 @@
 # Movie Search Db19 🔥🔥🔥🔥🔥🔥🔥
-### live site https://moviedb19.netlify.com/
+### live site https://moviedb19.netlify.com/ (deployed at jb-miranda branch)
+
 
 ![](assets/01.png)
 
